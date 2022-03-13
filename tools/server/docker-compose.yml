@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=development
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    environment:
+      - discovery.type=single-node
+    ports:
+    - 9200:9200
+    - 9300:9300
+
+  redis:
+    image: redis:3.2
+    ports:
+      - 6379:6379
+
+networks:
+  default:
+    external:
+      name: joaoviniciuslab

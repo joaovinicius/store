@@ -1,0 +1,10 @@
+.idea
+node_modules
+.env
+lib
+
+# server
+/tools/server/ats-docs
+/tools/server/ats-monolith
+/tools/server/postgres
+/tools/server/backup/*
