@@ -1,0 +1,17 @@
+.idea
+node_modules
+.env
+lib
+coverage
+.scannerwork
+sonar-project.properties
+
+# client
+/tools/client/ats-front-candidate
+/tools/client/ats-front-company
+
+# server
+/tools/server/ats-docs
+/tools/server/ats-monolith
+/tools/server/postgres
+/tools/server/*.backup

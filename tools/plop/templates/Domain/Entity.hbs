@@ -1,0 +1,11 @@
+import { I{{pascalCase name}} } from './I{{pascalCase name}}'
+
+export class {{pascalCase name}} implements I{{pascalCase name}} {
+  public id: number | string
+  public name: string
+
+  constructor (props: I{{pascalCase name}}) {
+    this.id = props.id
+    this.name = props.name
+  }
+}

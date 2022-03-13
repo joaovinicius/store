@@ -1,11 +1,99 @@
 {
   "name": "store-ts",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Store typescript core",
+  "main": "lib/index.js",
+  "types": "lib",
+  "private": false,
+  "files": [
+    "src/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "dev": "tsc -p . --watch & nodemon --watch \"src/**\" --ext \"vue,png,css,scss,json,woff2\" --exec \"yarn copy-infrastructure\"",
+    "client": "rake candidate_start",
+    "build": "tsc -p . && yarn copy-infrastructure",
+    "copy-infrastructure": "copyfiles -u 1 src/**/*.vue src/**/*.js src/**/*.svg src/**/*.png src/**/*.ico src/**/*.css src/**/*.scss src/**/*.json src/**/*.woff2 lib/",
+    "plop": "plop --plopfile tools/plop/plopfile.js",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix",
+    "server": "rake tools_restart && rake docs_start & rake server_start",
+    "setup": "yarn install && yarn build && yarn link && rake setup && yarn server"
   },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "@nuxt/types": "^2.14.7",
+    "@nuxtjs/eslint-config-typescript": "^6.0.0",
+    "@types/dom-mediacapture-record": "^1.0.10",
+    "@types/facebook-js-sdk": "^3.3.2",
+    "@types/faker": "^5.5.9",
+    "@types/jest": "^27.0.1",
+    "@types/lodash": "^4.14.170",
+    "@types/node": "^14.14.44",
+    "@types/vue2-editor": "^2.6.1",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "@vue/cli-plugin-babel": "^4.5.10",
+    "@vue/cli-plugin-typescript": "^4.5.10",
+    "@vue/cli-service": "^4.5.10",
+    "@vue/runtime-dom": "^3.2.22",
+    "axios": "^0.21.1",
+    "copyfiles": "^2.4.1",
+    "faker": "^5.5.3",
+    "eslint": "^7.24.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-import-resolver-node": "0.3.4",
+    "eslint-import-resolver-typescript": "2.4.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "jest": "^27.2.0",
+    "nodemon": "^2.0.15",
+    "plop": "^2.7.4",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "ts-morph": "^12.0.0",
+    "vue-loader": "^16.0.0",
+    "vue-router": "^3.5.1",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abler-Recrutamento-Digital/ats-front-resources-api.git"
+  },
+  "keywords": [
+    "abler",
+    "front-end",
+    "resources"
+  ],
+  "author": "Abler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abler-Recrutamento-Digital/ats-front-resources-api/issues"
+  },
+  "homepage": "https://github.com/Abler-Recrutamento-Digital/ats-front-resources-api#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@mdi/font": "^5.9.55",
+    "@nuxtjs/composition-api": "^0.29.0",
+    "@nuxtjs/dayjs": "^1.4.0",
+    "@nuxtjs/i18n": "^7.0.3",
+    "@nuxtjs/vuetify": "^1.12.2",
+    "@tinymce/tinymce-vue": "3.2.8",
+    "@types/vuedraggable": "^2.24.0",
+    "@vue/compat": "^3.2.19",
+    "@vue/compiler-sfc": "^3.2.19",
+    "@vue/composition-api": "^1.2.4",
+    "axios": "^0.21.1",
+    "lodash": "^4.17.21",
+    "nuxt": "^2.15.0",
+    "nuxt-i18n": "^6.28.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3",
+    "universal-cookie": "^4.0.4",
+    "vue": "^2.6.14",
+    "vue-lazy-hydration": "^2.0.0-beta.4",
+    "vue-password-strength-meter": "^1.7.2",
+    "vue2-editor": "^2.10.2",
+    "vuex": "^3.6.2",
+    "zxcvbn": "^4.4.2"
+  }
 }

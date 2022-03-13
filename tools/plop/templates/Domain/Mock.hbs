@@ -1,0 +1,8 @@
+import faker from 'faker'
+import { I{{pascalCase name}} } from './I{{pascalCase name}}'
+import { {{pascalCase name}} } from './{{pascalCase name}}'
+
+export const {{pascalCase name}}Mock: I{{pascalCase name}} = new {{pascalCase name}}({
+  id: faker.datatype.uuid(),
+  name: faker.name.firstName()
+})
