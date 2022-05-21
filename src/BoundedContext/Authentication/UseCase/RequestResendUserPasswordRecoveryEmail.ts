@@ -1,6 +1,6 @@
 import { Repository } from '../Repository'
 import { IRecoveryPasswordToken } from '../../../Domain/Authentication/RecoveryPasswordToken/IRecoveryPasswordToken'
-import { Command } from '../../../Infrastructure/Support/Contracts/Command'
+import { Command } from '../../Command'
 
 export default class RequestResendUserPasswordRecoveryEmail implements Command {
   private repository: Repository

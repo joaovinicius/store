@@ -3,7 +3,7 @@ import { ISocialAuthentication } from '../../Domain/Authentication/SocialAuthent
 import { IAuthentication } from '../../Domain/Authentication/Authentication/IAuthentication'
 import { IRecoveryPasswordToken } from '../../Domain/Authentication/RecoveryPasswordToken/IRecoveryPasswordToken'
 import { IResetPasswordToken } from '../../Domain/Authentication/ResetPasswordToken/IResetPasswordToken'
-import { IConfirmationAccountToken } from '../../Domain/Authentication/ConfirmationAccount/IConfirmationAccountToken'
+import { IConfirmationAccountToken } from '../../Domain/Authentication/ConfirmationAccountToken/IConfirmationAccountToken'
 import { IVerificationPasswordToken } from '../../Domain/Authentication/VerificationPasswordToken/IVerificationPasswordToken'
 
 export interface Repository {

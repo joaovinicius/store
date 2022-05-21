@@ -1,3 +1,6 @@
-export interface I{{pascalCase name}} {
+import { IBase } from '../../Base'
 
+export interface I{{pascalCase name}} extends IBase {
+  id: string,
+  name: string
 }

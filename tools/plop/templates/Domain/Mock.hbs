@@ -1,0 +1,11 @@
+import faker from 'faker'
+import { I{{pascalCase name}} } from '../../../../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/I{{pascalCase name}}'
+import { {{pascalCase name}} } from '../../../../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}'
+
+export const mock: I{{pascalCase name}} = new {{pascalCase name}}({
+  id: faker.datatype.uuid(),
+  name: faker.name.firstName(),
+  createdAt: new Date(),
+  updatedAt: new Date(),
+  deletedAt: new Date()
+})

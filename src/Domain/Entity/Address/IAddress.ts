@@ -1,12 +1,14 @@
-import { ICity } from '../../ValueObject/Collection/City/ICity'
+import { ITimestampsAndSoftDeletes } from '../../Base'
 
-export interface IAddress {
+export interface IAddress extends ITimestampsAndSoftDeletes {
   id?: string,
   cep: string,
-  city: ICity,
+  neighborhood: string,
   street: string,
   number: string,
-  neighborhood: string,
   complement?: string,
-  name?: string
+  country?: string,
+  cityName: string,
+  stateName: string,
+  stateAbbr: string
 }

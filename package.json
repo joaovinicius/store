@@ -9,13 +9,18 @@
   "private": false,
   "scripts": {
     "test": "jest",
-    "dev": "tsc -p . --watch",
-    "build": "tsc -p .",
-    "lint": "eslint --ext .ts --ignore-path .gitignore ."
+    "server": "ls -l",
+    "client": "ls -l",
+    "update:server": "ls -l",
+    "update:client": "ls -l",
+    "plop": "plop --plopfile tools/plop/plopfile.js",
+    "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "setup": "node setup.js"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^6.0.0",
     "@types/jest": "^27.0.1",
+    "@types/faker": "^5.5.9",
     "@types/lodash": "^4.14.170",
     "@types/node": "^14.14.44",
     "@types/vue2-editor": "^2.6.1",
@@ -27,6 +32,7 @@
     "@vue/runtime-dom": "^3.2.22",
     "axios": "^0.21.1",
     "eslint": "^7.24.0",
+    "faker": "^5.5.3",
     "eslint-config-typescript": "^3.0.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-import-resolver-typescript": "2.4.0",

@@ -1,6 +1,6 @@
 import { Repository } from '../Repository'
 import { IResetPasswordToken } from '../../../Domain/Authentication/ResetPasswordToken/IResetPasswordToken'
-import { Command } from '../../../Infrastructure/Support/Contracts/Command'
+import { Command } from '../../Command'
 
 export default class RequestResetUserPassword implements Command {
   private repository: Repository

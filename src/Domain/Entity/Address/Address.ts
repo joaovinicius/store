@@ -1,24 +1,29 @@
-import { City } from '../../ValueObject/Collection/City/City'
+import { TimestampsAndSoftDeletes } from '../../Base'
 import { IAddress } from './IAddress'
 
-export class Address implements IAddress {
+export class Address extends TimestampsAndSoftDeletes implements IAddress {
   public id?: string
   public cep: string
-  public city: City
+  public neighborhood: string
   public street: string
   public number: string
-  public neighborhood: string
   public complement?: string
-  public name?: string
+  public country?: string
+  public cityName: string
+  public stateName: string
+  public stateAbbr: string
 
   constructor (props: IAddress) {
+    super(props)
     this.id = props.id
     this.cep = props.cep
-    this.city = props.city
+    this.neighborhood = props.neighborhood
     this.street = props.street
     this.number = props.number
-    this.neighborhood = props.neighborhood
     this.complement = props.complement
-    this.name = props.name
+    this.country = props.country
+    this.cityName = props.cityName
+    this.stateName = props.stateName
+    this.stateAbbr = props.stateAbbr
   }
 }

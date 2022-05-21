@@ -1,25 +1,33 @@
 import { Address } from './Address'
-import { City } from '../../ValueObject/Collection/City/City'
-import { CityFactory } from '../../ValueObject/Collection/City/CityFactory'
 
 export function AddressFactory (
   id: string = '',
   cep: string = '',
-  city: City = CityFactory(),
+  neighborhood: string = '',
   street: string = '',
   number: string = '',
-  neighborhood: string = '',
   complement: string = '',
-  name: string = ''
+  country: string = '',
+  cityName: string = '',
+  stateName: string = '',
+  stateAbbr: string = '',
+  createdAt: Date = new Date(),
+  updatedAt: Date = new Date(),
+  deletedAt: Date | undefined = undefined
 ): Address {
   return new Address({
     id,
     cep,
-    city,
+    neighborhood,
     street,
     number,
-    neighborhood,
     complement,
-    name
+    country,
+    cityName,
+    stateName,
+    stateAbbr,
+    createdAt,
+    updatedAt,
+    deletedAt
   })
 }

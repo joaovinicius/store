@@ -1,0 +1,26 @@
+<mxfile host="65bd71144e">
+    <diagram id="ZNAGp42ZaLtABFDzO0q7" name="Layout">
+        <mxGraphModel dx="1024" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="X1KTOewf0eXRseGAiVpO" name="Page">
+        <mxGraphModel dx="1024" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="J-Rlluv9f3RHMr8YzRxN-0"/>
+                <mxCell id="J-Rlluv9f3RHMr8YzRxN-1" parent="J-Rlluv9f3RHMr8YzRxN-0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="_0Leg-Lmegj1r89VCLQ3" name="Component">
+        <mxGraphModel dx="1024" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="bBTWPzDtvc-EnBJWENXH-0"/>
+                <mxCell id="bBTWPzDtvc-EnBJWENXH-1" parent="bBTWPzDtvc-EnBJWENXH-0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

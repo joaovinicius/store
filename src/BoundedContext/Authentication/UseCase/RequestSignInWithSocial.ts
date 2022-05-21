@@ -1,7 +1,7 @@
 import { ISocialAuthentication } from '../../../Domain/Authentication/SocialAuthentication/ISocialAuthentication'
 import { ISession } from '../../../Domain/Authentication/Session/ISession'
 import { Repository } from '../Repository'
-import { Command } from '../../../Infrastructure/Support/Contracts/Command'
+import { Command } from '../../Command'
 
 export default class RequestSignInWithSocial implements Command {
   private repository: Repository

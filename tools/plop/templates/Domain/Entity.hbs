@@ -1,8 +1,13 @@
+import { Base } from '../../Base'
 import { I{{pascalCase name}} } from './I{{pascalCase name}}'
 
-export class {{pascalCase name}} implements I{{pascalCase name}} {
+export class {{pascalCase name}} extends Base implements I{{pascalCase name}} {
+  public id: string
+  public name: string
 
   constructor (props: I{{pascalCase name}}) {
-
+    super(props)
+    this.id = props.id
+    this.name = props.name
   }
 }

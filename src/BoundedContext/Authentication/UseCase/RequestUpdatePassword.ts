@@ -1,6 +1,6 @@
 import { IAuthentication } from '../../../Domain/Authentication/Authentication/IAuthentication'
 import { Repository } from '../Repository'
-import { Command } from '../../../Infrastructure/Support/Contracts/Command'
+import { Command } from '../../Command'
 
 export default class RequestUpdatePassword implements Command {
   private repository: Repository

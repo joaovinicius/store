@@ -8,41 +8,47 @@ module.exports = function (plop) {
         message: 'Domain name, e.g. Candidate'
       },
       {
-        type: 'input',
+        type: 'list',
         name: 'folder',
-        message: 'Folder within /src/'
+        message: 'Domain type',
+        choices: [
+          { name: 'Aggregate', value: 'Aggregate' },
+          { name: 'Authentication', value: 'Entity' },
+          { name: 'Entity', value: 'Entity' },
+          { name: 'ValueObject', value: 'ValueObject' }
+        ]
       }
     ],
     actions: [
       {
         type: 'add',
         path:
-          '../src/Domain/{{pascalCase folder}}/{{pascalCase name}}.ts',
+          '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}.ts',
         templateFile: 'templates/Domain/Entity.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/Domain/{{pascalCase folder}}/I{{pascalCase name}}.ts',
+          '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/I{{pascalCase name}}.ts',
         templateFile: 'templates/Domain/Interface.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/Domain/{{pascalCase folder}}/{{pascalCase name}}Factory.ts',
+          '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}Factory.ts',
         templateFile: 'templates/Domain/Factory.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/Domain/{{pascalCase folder}}/index.ts',
+          '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/index.ts',
         templateFile: 'templates/Domain/index.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/Domain/{{pascalCase folder}}/{{pascalCase name}}.spec.ts',
-        templateFile: 'templates/Domain/Spec.hbs'
+          '../../test/unit/Domain/__mocks__/{{pascalCase folder}}/{{pascalCase name}}.ts',
+        templateFile: 'templates/Domain/Mock.hbs'
       }
     ]
   })
@@ -70,19 +76,19 @@ module.exports = function (plop) {
       {
         type: 'add',
         path:
-          '../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/Repository.ts',
+          '../../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/Repository.ts',
         templateFile: 'templates/BoundedContext/Repository.hbs'
       },
       {
         type: 'add',
         path:
-        '../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/UseCase/{{pascalCase usecase}}.ts',
+        '../../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/UseCase/{{pascalCase usecase}}.ts',
         templateFile: 'templates/BoundedContext/UseCase.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}.spec.ts',
+          '../../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}.spec.ts',
         templateFile: 'templates/BoundedContext/Spec.hbs'
       }
     ]
@@ -106,13 +112,13 @@ module.exports = function (plop) {
       {
         type: 'add',
         path:
-          '../src/{{pascalCase folder}}/{{pascalCase name}}.vue',
+          '../../src/{{pascalCase folder}}/{{pascalCase name}}.vue',
         templateFile: 'templates/Infrastructure/Vue/Component.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/{{pascalCase folder}}/{{pascalCase name}}.spec.ts',
+          '../../src/{{pascalCase folder}}/{{pascalCase name}}.spec.ts',
         templateFile: 'templates/Infrastructure/Vue/Spec.hbs'
       }
     ]
@@ -136,37 +142,37 @@ module.exports = function (plop) {
       {
         type: 'add',
         path:
-          '../src/{{lowerCase folder}}/{{lowerCase name}}/action.ts',
+          '../../src/{{lowerCase folder}}/{{lowerCase name}}/action.ts',
         templateFile: 'templates/Infrastructure/Vuex/action.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/{{lowerCase folder}}/{{lowerCase name}}/getters.ts',
+          '../../src/{{lowerCase folder}}/{{lowerCase name}}/getters.ts',
         templateFile: 'templates/Infrastructure/Vuex/getters.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/{{lowerCase folder}}/{{lowerCase name}}/index.ts',
+          '../../src/{{lowerCase folder}}/{{lowerCase name}}/index.ts',
         templateFile: 'templates/Infrastructure/Vuex/index.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/{{lowerCase folder}}/{{lowerCase name}}/mutations.ts',
+          '../../src/{{lowerCase folder}}/{{lowerCase name}}/mutations.ts',
         templateFile: 'templates/Infrastructure/Vuex/mutations.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/{{lowerCase folder}}/{{lowerCase name}}/state.ts',
+          '../../src/{{lowerCase folder}}/{{lowerCase name}}/state.ts',
         templateFile: 'templates/Infrastructure/Vuex/state.hbs'
       },
       {
         type: 'add',
         path:
-          '../src/{{lowerCase folder}}/{{lowerCase name}}/{{lowerCase name}}.spec.ts',
+          '../../src/{{lowerCase folder}}/{{lowerCase name}}/{{lowerCase name}}.spec.ts',
         templateFile: 'templates/Infrastructure/Vuex/spec.hbs'
       }
     ]
