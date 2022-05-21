@@ -1,8 +1,8 @@
 import { Billing } from './Billing'
 
 export function BillingFactory (
-  id: string = '',
-  name: string = '',
+  id = '',
+  name = '',
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),
   deletedAt: Date | undefined = undefined

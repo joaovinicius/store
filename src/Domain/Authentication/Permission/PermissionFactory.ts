@@ -1,8 +1,8 @@
 import { Permission } from './Permission'
 
 export function PermissionFactory (
-  name: string = '',
-  value: boolean = false
+  name = '',
+  value = false
 ): Permission {
   return new Permission({ name, value })
 }

@@ -4,9 +4,9 @@ import { IContact } from '../../Entity/Contact/IContact'
 import { Admin } from './Admin'
 
 export function AdminFactory (
-  id: string = '',
-  name: string = '',
-  password: string = '',
+  id = '',
+  name = '',
+  password = '',
   contact: IContact = ContactFactory(),
   modulePermissions: IModulePermission[] = [],
   createdAt: Date = new Date(),

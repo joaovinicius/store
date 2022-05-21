@@ -1,5 +1,5 @@
 import { IUser } from '../../Aggregate/User/IUser'
-import { Timestamps,  SoftDeletes } from '../../Base'
+import { TimestampsAndSoftDeletes } from '../../Base'
 import { IComment } from './IComment'
 
 export class Comment extends TimestampsAndSoftDeletes implements IComment {
@@ -10,7 +10,7 @@ export class Comment extends TimestampsAndSoftDeletes implements IComment {
   public parentId?: string
   public children?: IComment[]
 
-  constructor (props: IComment) {
+  constructor(props: IComment) {
     super(props)
     this.id = props.id
     this.name = props.name

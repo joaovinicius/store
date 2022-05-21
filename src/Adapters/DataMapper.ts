@@ -1,27 +1,27 @@
 export interface ReadApiData {
-  responseDataToEntity(data: any): any
+  responseDataToEntity(data: unknown): unknown
 }
 
 export interface ReadApiHeaders {
-  responseHeaderToEntity(data: any): any
+  responseHeaderToEntity(data: unknown): unknown
 }
 
 export interface SendApiData {
-  fromEntityToRequestData(data: any): any
+  fromEntityToRequestData(data: unknown): unknown
 }
 
 export interface ReadSqlData {
-  queryDataToEntity(data: any): any
+  queryDataToEntity(data: unknown): unknown
 }
 
 export interface SendSqlData {
-  fromEntityToSqlData(data: any): any
+  fromEntityToSqlData(data: unknown): unknown
 }
 
 export interface ReadLocalStorage {
-  fromObjectToEntity(data: any): any
+  fromObjectToEntity(data: unknown): unknown
 }
 
 export interface SendApiFile {
-  fromFileToRequestData(data: File): any
+  fromFileToRequestData(data: File): unknown
 }

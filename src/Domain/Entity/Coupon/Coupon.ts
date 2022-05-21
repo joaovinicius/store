@@ -1,5 +1,5 @@
 import { IAdmin } from '../../Aggregate/Admin/IAdmin'
-import { Timestamps,  SoftDeletes } from '../../Base'
+import { TimestampsAndSoftDeletes } from '../../Base'
 import { ICoupon } from './ICoupon'
 
 export class Coupon extends TimestampsAndSoftDeletes implements ICoupon {
@@ -12,7 +12,7 @@ export class Coupon extends TimestampsAndSoftDeletes implements ICoupon {
   public isActive: boolean
   public createdBy: IAdmin
 
-  constructor (props: ICoupon) {
+  constructor(props: ICoupon) {
     super(props)
     this.id = props.id
     this.code = props.code

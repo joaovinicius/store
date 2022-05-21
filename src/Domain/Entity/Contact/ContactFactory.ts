@@ -2,9 +2,9 @@ import { IAddress } from '../Address/IAddress'
 import { Contact } from './Contact'
 
 export function ContactFactory (
-  id: string = '',
-  email: string = '',
-  phone: string = '',
+  id = '',
+  email = '',
+  phone = '',
   addresses: IAddress[] = [],
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),

@@ -6,13 +6,13 @@ import { IBuy } from '../Buy/IBuy'
 import { ProductInStock } from './ProductInStock'
 
 export function ProductInStockFactory (
-  id: string = '',
-  barcode: string = '',
+  id = '',
+  barcode = '',
   product: IProduct = ProductFactory(),
   attributeValues: IAttributeValue[] = [],
-  salePrice: number = 0,
-  purchasePrice: number = 0,
-  quantity: number = 0,
+  salePrice = 0,
+  purchasePrice = 0,
+  quantity = 0,
   buy: IBuy = BuyFactory(),
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),

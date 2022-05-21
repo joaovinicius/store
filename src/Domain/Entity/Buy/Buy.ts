@@ -1,4 +1,4 @@
-import { Timestamps,  SoftDeletes } from '../../Base'
+import { TimestampsAndSoftDeletes } from '../../Base'
 import { ISupplier } from '../Supplier/ISupplier'
 import { IBuy } from './IBuy'
 
@@ -11,7 +11,7 @@ export class Buy extends TimestampsAndSoftDeletes implements IBuy {
   public deliveryDate: Date
   public supplier: ISupplier
 
-  constructor (props: IBuy) {
+  constructor(props: IBuy) {
     super(props)
     this.id = props.id
     this.invoice = props.invoice

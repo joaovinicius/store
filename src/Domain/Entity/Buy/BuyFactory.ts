@@ -3,10 +3,10 @@ import { SupplierFactory } from '../Supplier/SupplierFactory'
 import { Buy } from './Buy'
 
 export function BuyFactory (
-  id: string = '',
-  invoice: number = 0,
-  totalPaid: number = 0,
-  costOfFreight: number = 0,
+  id = '',
+  invoice = 0,
+  totalPaid = 0,
+  costOfFreight = 0,
   requestDate: Date = new Date(),
   deliveryDate: Date = new Date(),
   supplier: ISupplier = SupplierFactory(),

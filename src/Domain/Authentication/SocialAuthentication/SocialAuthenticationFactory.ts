@@ -1,7 +1,7 @@
 import { SocialAuthentication } from './SocialAuthentication'
 
 export function SocialAuthenticationFactory (
-  token: string = ''
+  token = ''
 ): SocialAuthentication {
   return new SocialAuthentication({ token })
 }

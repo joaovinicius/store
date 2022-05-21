@@ -10,7 +10,7 @@ import { BillingFactory } from '../../Entity/Billing/BillingFactory'
 import { Purchase } from './Purchase'
 
 export function PurchaseFactory (
-  id: string = '',
+  id = '',
   products: IProductInCart[] = [],
   coupon: ICoupon = CouponFactory(),
   shipping: IShipping = ShippingFactory(),

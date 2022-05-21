@@ -1,7 +1,7 @@
 import { ConfirmationAccountToken } from './ConfirmationAccountToken'
 
 export function ConfirmationAccountTokenFactory (
-  confirmationToken: string = ''
+  confirmationToken = ''
 ): ConfirmationAccountToken {
   return new ConfirmationAccountToken({ confirmationToken })
 }

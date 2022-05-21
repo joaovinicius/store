@@ -2,10 +2,10 @@ import { IProductInStock, ProductInStockFactory } from '../ProductInStock'
 import { ProductInCart } from './ProductInCart'
 
 export function ProductInCartFactory (
-  id: string = '',
-  quantity: number = 0,
+  id = '',
+  quantity = 0,
   product: IProductInStock = ProductInStockFactory(),
-  note: string = '',
+  note = '',
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),
   deletedAt: Date | undefined = undefined

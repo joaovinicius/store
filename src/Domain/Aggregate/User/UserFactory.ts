@@ -3,9 +3,9 @@ import { IContact } from '../../Entity/Contact/IContact'
 import { User } from './User'
 
 export function UserFactory (
-  id: string = '',
-  name: string = '',
-  password: string = '',
+  id = '',
+  name = '',
+  password = '',
   contact: IContact = ContactFactory(),
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),

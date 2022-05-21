@@ -1,3 +1,3 @@
 export interface Command {
-  execute(url: string, body?: any): any
+  execute(url: string, body?: unknown): unknown
 }

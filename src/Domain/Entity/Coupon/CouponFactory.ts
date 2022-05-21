@@ -3,13 +3,13 @@ import { IAdmin } from '../../Aggregate/Admin/IAdmin'
 import { Coupon } from './Coupon'
 
 export function CouponFactory (
-  id: string = '',
-  code: string = '',
-  discount: number = 0,
-  limit: number = 0,
+  id = '',
+  code = '',
+  discount = 0,
+  limit = 0,
   startDate: Date = new Date(),
   endDate: Date = new Date(),
-  isActive: boolean = false,
+  isActive = false,
   createdBy: IAdmin = AdminFactory(),
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),

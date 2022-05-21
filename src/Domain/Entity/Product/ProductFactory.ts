@@ -1,11 +1,11 @@
 import { Product } from './Product'
 
 export function ProductFactory (
-  id: string = '',
-  name: string = '',
-  description: string = '',
-  brand: string = '',
-  model: string = '',
+  id = '',
+  name = '',
+  description = '',
+  brand = '',
+  model = '',
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),
   deletedAt: Date | undefined = undefined

@@ -1,9 +1,9 @@
 import { Authentication } from './Authentication'
 
 export function AuthenticationFactory (
-  login: string = '',
-  password: string = '',
-  passwordConfirmation: string = ''
+  login = '',
+  password = '',
+  passwordConfirmation = ''
 ): Authentication {
   return new Authentication({
     login,

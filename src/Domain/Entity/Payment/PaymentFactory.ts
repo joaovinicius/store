@@ -1,8 +1,8 @@
 import { Payment } from './Payment'
 
 export function PaymentFactory (
-  id: string = '',
-  name: string = '',
+  id = '',
+  name = '',
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),
   deletedAt: Date | undefined = undefined

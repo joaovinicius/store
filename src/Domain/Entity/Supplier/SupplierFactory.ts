@@ -3,8 +3,8 @@ import { ContactFactory } from '../Contact/ContactFactory'
 import { Supplier } from './Supplier'
 
 export function SupplierFactory (
-  id: string = '',
-  name: string = '',
+  id = '',
+  name = '',
   contact: IContact = ContactFactory(),
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),

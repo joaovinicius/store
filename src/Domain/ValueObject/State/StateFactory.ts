@@ -1,9 +1,9 @@
 import { State } from './State'
 
 export function StateFactory (
-  id: string = '',
-  name: string = '',
-  abbr: string = '',
+  id = '',
+  name = '',
+  abbr = '',
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),
   deletedAt: Date | undefined = undefined

@@ -8,7 +8,7 @@ import { ShippingFactory } from '../../Entity/Shipping/ShippingFactory'
 import { Cart } from './Cart'
 
 export function CartFactory (
-  id: string = '',
+  id = '',
   products: IProductInCart[] = [],
   coupon: ICoupon = CouponFactory(),
   shipping: IShipping = ShippingFactory(),

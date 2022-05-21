@@ -2,9 +2,9 @@ import { Category } from './Category'
 import { ICategory } from './ICategory'
 
 export function CategoryFactory (
-  id: string = '',
-  name: string = '',
-  parentId: string = '',
+  id = '',
+  name = '',
+  parentId = '',
   children: ICategory[] = [],
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),

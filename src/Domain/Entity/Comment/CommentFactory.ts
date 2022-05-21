@@ -4,11 +4,11 @@ import { Comment } from './Comment'
 import { IComment } from './IComment'
 
 export function CommentFactory (
-  id: string = '',
-  name: string = '',
+  id = '',
+  name = '',
   from: IUser = UserFactory(),
-  message: string = '',
-  parentId: string = '',
+  message = '',
+  parentId = '',
   children: IComment[] = [],
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),

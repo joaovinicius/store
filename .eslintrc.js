@@ -1,30 +1,25 @@
 module.exports = {
   root: true,
+  parser: '@typescript-eslint/parser', // Especifica o analisador ESLint
+  parserOptions: {
+    ecmaVersion: 2020, // Permite a análise de recursos modernos do ECMAScript
+    sourceType: 'module' // Permite o uso de imports
+  },
   env: {
-    browser: true,
+    es6: true,
     node: true
   },
-  parserOptions: {
-    parser: '@typescript-eslint/parser'
-  },
+  plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
-    'plugin:vue/recommended',
-    '@nuxtjs/eslint-config-typescript'
+    'plugin:@typescript-eslint/eslint-recommended', // Usa as regras recomendadas do @typescript-eslint/eslint-plugin
+    'plugin:@typescript-eslint/recommended' // Usa as regras recomendadas do @typescript-eslint/eslint-plugin
   ],
-  plugins: [
-    'vue'
-  ],
-  overrides: [
-    {
-      files: [
-        '**/*.spec.js',
-        '**/*.test.js'
-      ],
-      env: {
-        jest: true
-      }
-    }
-  ],
-  rules: {}
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
+  },
+  rules: {
+    '@typescript-eslint/no-var-requires': 0
+  }
 }
