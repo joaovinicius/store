@@ -1,7 +1,6 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
 import { ISupplier } from '../Supplier'
 
-export interface IBuy extends ITimestampsAndSoftDeletes {
+export interface IBuy {
   id?: string,
   invoice?: number,
   totalPaid: number,
@@ -9,4 +8,7 @@ export interface IBuy extends ITimestampsAndSoftDeletes {
   requestDate: Date,
   deliveryDate: Date,
   supplier: ISupplier,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

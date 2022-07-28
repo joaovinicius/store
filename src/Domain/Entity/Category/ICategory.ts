@@ -1,8 +1,9 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
-
-export interface ICategory extends ITimestampsAndSoftDeletes {
+export interface ICategory {
   id: string,
   name: string,
   parentId?: string,
-  children?: ICategory[]
+  children?: ICategory[],
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

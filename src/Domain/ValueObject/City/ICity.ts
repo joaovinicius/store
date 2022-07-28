@@ -5,5 +5,8 @@ export interface ICity extends ITimestampsAndSoftDeletes {
   id: string,
   name: string,
   stateId: string,
-  state?: IState
+  state?: IState,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

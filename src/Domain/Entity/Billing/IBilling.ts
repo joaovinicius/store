@@ -1,6 +1,7 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
-
-export interface IBilling extends ITimestampsAndSoftDeletes {
+export interface IBilling {
   id: string,
-  name: string
+  name: string,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

@@ -1,7 +1,9 @@
 import { IBilling } from '../../Entity/Billing/IBilling'
 import { ICart } from '../Cart/ICart'
-import { ITimestampsAndSoftDeletes } from '../../Base'
 
-export interface IPurchase extends ICart, ITimestampsAndSoftDeletes {
-  billing: IBilling
+export interface IPurchase extends ICart {
+  billing: IBilling,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

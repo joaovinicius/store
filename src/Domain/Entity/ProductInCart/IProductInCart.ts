@@ -1,9 +1,11 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
 import { IProductInStock } from '../ProductInStock/IProductInStock'
 
-export interface IProductInCart extends ITimestampsAndSoftDeletes {
+export interface IProductInCart {
   id: string,
   quantity: number,
   product: IProductInStock,
-  note: string
+  note: string,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

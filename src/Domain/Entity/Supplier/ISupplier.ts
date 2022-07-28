@@ -1,8 +1,10 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
 import { IContact } from '../Contact/IContact'
 
-export interface ISupplier extends ITimestampsAndSoftDeletes {
+export interface ISupplier {
   id: string,
   name: string,
-  contact: IContact
+  contact: IContact,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

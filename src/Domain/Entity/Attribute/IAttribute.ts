@@ -1,6 +1,7 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
-
-export interface IAttribute extends ITimestampsAndSoftDeletes {
+export interface IAttribute {
   id: string,
-  name: string
+  name: string,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

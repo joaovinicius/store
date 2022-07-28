@@ -1,11 +1,13 @@
 import { IUser } from '../../Aggregate/User/IUser'
-import { ITimestampsAndSoftDeletes } from '../../Base'
 
-export interface IComment extends ITimestampsAndSoftDeletes {
+export interface IComment {
   id: string,
   name: string,
   from: IUser,
   message: string,
   parentId?: string,
-  children?: IComment[]
+  children?: IComment[],
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

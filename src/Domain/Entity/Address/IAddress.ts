@@ -1,6 +1,4 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
-
-export interface IAddress extends ITimestampsAndSoftDeletes {
+export interface IAddress {
   id?: string,
   cep: string,
   neighborhood: string,
@@ -10,5 +8,8 @@ export interface IAddress extends ITimestampsAndSoftDeletes {
   country?: string,
   cityName: string,
   stateName: string,
-  stateAbbr: string
+  stateAbbr: string,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

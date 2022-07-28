@@ -1,7 +1,6 @@
 import { IAdmin } from '../../Aggregate'
-import { ITimestampsAndSoftDeletes } from '../../Base'
 
-export interface ICoupon extends ITimestampsAndSoftDeletes {
+export interface ICoupon {
   id?: string,
   code: string,
   discount: number,
@@ -9,5 +8,8 @@ export interface ICoupon extends ITimestampsAndSoftDeletes {
   startDate: Date,
   endDate: Date,
   isActive: boolean,
-  createdBy: IAdmin
+  createdBy: IAdmin,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

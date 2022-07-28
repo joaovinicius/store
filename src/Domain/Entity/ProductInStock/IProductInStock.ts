@@ -1,9 +1,8 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
 import { IProduct } from '../Product/IProduct'
 import { IAttributeValue } from '../AttributeValue/IAttributeValue'
 import { IBuy } from '../Buy/IBuy'
 
-export interface IProductInStock extends ITimestampsAndSoftDeletes {
+export interface IProductInStock {
   id: string,
   barcode: string,
   product: IProduct,
@@ -11,5 +10,8 @@ export interface IProductInStock extends ITimestampsAndSoftDeletes {
   salePrice: number,
   purchasePrice: number,
   quantity: number,
-  buy?: IBuy
+  buy?: IBuy,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

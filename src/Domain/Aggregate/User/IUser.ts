@@ -1,9 +1,11 @@
 import { IContact } from '../../Entity/Contact/IContact'
-import { ITimestampsAndSoftDeletes } from '../../Base'
 
-export interface IUser extends ITimestampsAndSoftDeletes {
+export interface IUser {
   id: string,
   name: string,
   password: string,
-  contact: IContact
+  contact: IContact,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

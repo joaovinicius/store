@@ -1,9 +1,10 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
-
-export interface IProduct extends ITimestampsAndSoftDeletes {
+export interface IProduct {
   id: string,
   name: string,
   description: string,
   brand: string,
-  model: string
+  model: string,
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

@@ -1,9 +1,11 @@
-import { ITimestampsAndSoftDeletes } from '../../Base'
 import { IAddress } from '../Address/IAddress'
 
-export interface IContact extends ITimestampsAndSoftDeletes {
+export interface IContact {
   id: string,
   email: string,
   phone: string,
   addresses: IAddress[],
+  createdAt: Date,
+  updatedAt: Date,
+  deletedAt?: Date
 }

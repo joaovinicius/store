@@ -15,7 +15,7 @@
     "preview": "vite preview",
     "update:server": "ls -l",
     "update:client": "ls -l",
-    "plop": "plop --plopfile tools/plop/plopfile.js",
+    "scaffold": "plop --plopfile tools/plop/plopfile.ts",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
     "setup": "node setup.js"
   },
