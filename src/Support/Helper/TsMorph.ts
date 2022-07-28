@@ -1,14 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Project,
   SourceFile,
   PropertySignature,
   ParameterDeclaration,
   PropertyDeclaration,
-  TypeAliasDeclaration,
-  ClassDeclaration,
   MethodSignature,
   MethodDeclaration,
-  InterfaceDeclaration,
   Symbol as TSSymbol
 } from 'ts-morph'
 import uniq from 'lodash/uniq'
