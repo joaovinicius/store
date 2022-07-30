@@ -19,9 +19,10 @@ const exported = getPathExportNamesByPath('./src/Domain/index')
 
 describe('Domain', () => {
   parentFolders.forEach((folder: string) => {
-    const folders = fs.readdirSync(`./src/Domain/${folder}`, {
-      withFileTypes: true
-    })
+    const folders = fs.readdirSync(
+      `./src/Domain/${folder}`,
+      { withFileTypes: true }
+    )
     const folderNames = folders
       .filter((item: Dirent) => item.isDirectory())
       .map((item) => item.name)
@@ -30,11 +31,11 @@ describe('Domain', () => {
       const entitiName = ENTITY
       const entityFactoryName = `${ENTITY}Factory`
       const entityInterfaceName = `I${ENTITY}`
-
       entityNames.push(entitiName, entityFactoryName, entityInterfaceName)
 
       const Entity = require(`../../../src/Domain/${folder}${ENTITY}`)
-      const Mock = require(`./__mocks__/${folder}${ENTITY}`).mock
+      const Mock = require(`./__mocks__/${folder}${ENTITY}`)
+
       describe(`Domain - ${folder}${entitiName}`, () => {
         test('The entity, factory and interface are being exported', () => {
           expect(exported.includes(entitiName)).toBeTruthy()

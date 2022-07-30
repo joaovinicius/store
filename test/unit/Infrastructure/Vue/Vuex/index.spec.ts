@@ -39,3 +39,6 @@
 //     })
 //   })
 // })
+describe('Infrastructure', () => {
+  expect(true).toBeTruthy()
+})
