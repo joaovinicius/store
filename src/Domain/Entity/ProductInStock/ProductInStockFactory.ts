@@ -4,8 +4,9 @@ import { IProduct } from '../Product/IProduct'
 import { IAttributeValue } from '../AttributeValue/IAttributeValue'
 import { IBuy } from '../Buy/IBuy'
 import { ProductInStock } from './ProductInStock'
+const now = new Date()
 
-export function ProductInStockFactory (
+export function ProductInStockFactory(
   id = '',
   barcode = '',
   product: IProduct = ProductFactory(),
@@ -14,9 +15,8 @@ export function ProductInStockFactory (
   purchasePrice = 0,
   quantity = 0,
   buy: IBuy = BuyFactory(),
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): ProductInStock {
   return new ProductInStock({
     id,
@@ -28,7 +28,6 @@ export function ProductInStockFactory (
     quantity,
     buy,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

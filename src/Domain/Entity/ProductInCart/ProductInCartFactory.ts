@@ -1,14 +1,14 @@
 import { IProductInStock, ProductInStockFactory } from '../ProductInStock'
 import { ProductInCart } from './ProductInCart'
+const now = new Date()
 
-export function ProductInCartFactory (
+export function ProductInCartFactory(
   id = '',
   quantity = 0,
   product: IProductInStock = ProductInStockFactory(),
   note = '',
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): ProductInCart {
   return new ProductInCart({
     id,
@@ -16,7 +16,6 @@ export function ProductInCartFactory (
     product,
     note,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

@@ -1,17 +1,21 @@
-import { TimestampsAndSoftDeletes } from '../../Base'
 import { ICategory } from './ICategory'
 
-export class Category extends TimestampsAndSoftDeletes implements ICategory {
+export class Category implements ICategory {
   public id: string
   public name: string
-  public parentId?: string
+  public parent?: Category
   public children?: ICategory[]
+  public createdAt: Date
+  public updatedAt: Date
+  public deletedAt?: Date
 
-  constructor (props: ICategory) {
-    super(props)
+  constructor(props: ICategory) {
     this.id = props.id
     this.name = props.name
-    this.parentId = props.parentId
+    this.parent = props.parent
     this.children = props.children
+    this.createdAt = props.createdAt
+    this.updatedAt = props.updatedAt
+    this.deletedAt = props.deletedAt
   }
 }

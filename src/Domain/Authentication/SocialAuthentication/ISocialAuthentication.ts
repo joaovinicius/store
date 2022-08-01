@@ -1,3 +1,4 @@
 export interface ISocialAuthentication {
-  token: string,
+  token: string
+  name: string
 }

@@ -1,7 +1,6 @@
-import { TimestampsAndSoftDeletes } from '../../Base'
 import { IAddress } from './IAddress'
 
-export class Address extends TimestampsAndSoftDeletes implements IAddress {
+export class Address implements IAddress {
   public id?: string
   public cep: string
   public neighborhood: string
@@ -12,9 +11,11 @@ export class Address extends TimestampsAndSoftDeletes implements IAddress {
   public cityName: string
   public stateName: string
   public stateAbbr: string
+  public createdAt: Date
+  public updatedAt: Date
+  public deletedAt?: Date
 
-  constructor (props: IAddress) {
-    super(props)
+  constructor(props: IAddress) {
     this.id = props.id
     this.cep = props.cep
     this.neighborhood = props.neighborhood
@@ -25,5 +26,8 @@ export class Address extends TimestampsAndSoftDeletes implements IAddress {
     this.cityName = props.cityName
     this.stateName = props.stateName
     this.stateAbbr = props.stateAbbr
+    this.createdAt = props.createdAt
+    this.updatedAt = props.updatedAt
+    this.deletedAt = props.deletedAt
   }
 }

@@ -1,13 +1,17 @@
-import { TimestampsAndSoftDeletes } from '../../Base'
 import { IPayment } from './IPayment'
 
-export class Payment extends TimestampsAndSoftDeletes implements IPayment {
+export class Payment implements IPayment {
   public id: string
   public name: string
+  public createdAt: Date
+  public updatedAt: Date
+  public deletedAt?: Date
 
-  constructor (props: IPayment) {
-    super(props)
+  constructor(props: IPayment) {
     this.id = props.id
     this.name = props.name
+    this.createdAt = props.createdAt
+    this.updatedAt = props.updatedAt
+    this.deletedAt = props.deletedAt
   }
 }

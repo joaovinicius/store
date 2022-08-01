@@ -1,6 +1,7 @@
 import faker from 'faker'
 import { IAddress } from '../../../../../src/Domain/Entity/Address/IAddress'
 import { Address } from '../../../../../src/Domain/Entity/Address/Address'
+const now = new Date()
 
 export const mock: IAddress = new Address({
   id: faker.datatype.uuid(),
@@ -13,7 +14,6 @@ export const mock: IAddress = new Address({
   cityName: faker.address.city(),
   stateName: faker.address.state(),
   stateAbbr: faker.address.stateAbbr(),
-  createdAt: new Date(),
-  updatedAt: new Date(),
-  deletedAt: new Date()
+  createdAt: now,
+  updatedAt: now
 })

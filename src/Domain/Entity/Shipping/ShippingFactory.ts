@@ -1,17 +1,16 @@
 import { Shipping } from './Shipping'
+const now = new Date()
 
-export function ShippingFactory (
+export function ShippingFactory(
   id = '',
   name = '',
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): Shipping {
   return new Shipping({
     id,
     name,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

@@ -1,6 +1,7 @@
 import { Address } from './Address'
+const now = new Date()
 
-export function AddressFactory (
+export function AddressFactory(
   id = '',
   cep = '',
   neighborhood = '',
@@ -11,9 +12,8 @@ export function AddressFactory (
   cityName = '',
   stateName = '',
   stateAbbr = '',
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): Address {
   return new Address({
     id,
@@ -27,7 +27,6 @@ export function AddressFactory (
     stateName,
     stateAbbr,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

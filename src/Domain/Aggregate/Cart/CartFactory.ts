@@ -6,16 +6,16 @@ import { IProductInCart } from '../../Entity/ProductInCart/IProductInCart'
 import { IShipping } from '../../Entity/Shipping/IShipping'
 import { ShippingFactory } from '../../Entity/Shipping/ShippingFactory'
 import { Cart } from './Cart'
+const now = new Date()
 
-export function CartFactory (
+export function CartFactory(
   id = '',
   products: IProductInCart[] = [],
   coupon: ICoupon = CouponFactory(),
   shipping: IShipping = ShippingFactory(),
   payment: IPayment = PaymentFactory(),
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): Cart {
   return new Cart({
     id,
@@ -24,7 +24,6 @@ export function CartFactory (
     shipping,
     payment,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

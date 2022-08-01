@@ -1,26 +1,19 @@
 import { IModulePermission } from '../../Authentication/ModulePermission/IModulePermission'
-import { ContactFactory } from '../../Entity/Contact/ContactFactory'
-import { IContact } from '../../Entity/Contact/IContact'
+import { UserFactory } from '../../Aggregate/User/UserFactory'
+import { IUser } from '../../Aggregate/User/IUser'
 import { Admin } from './Admin'
+const now = new Date()
 
-export function AdminFactory (
+export function AdminFactory(
   id = '',
-  name = '',
-  password = '',
-  contact: IContact = ContactFactory(),
-  modulePermissions: IModulePermission[] = [],
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  user: IUser = UserFactory(),
+  modulePermissions: IModulePermission[] = []
 ): Admin {
   return new Admin({
     id,
-    name,
-    password,
-    contact,
+    user,
     modulePermissions,
-    createdAt,
-    updatedAt,
-    deletedAt
+    createdAt: now,
+    updatedAt: now
   })
 }

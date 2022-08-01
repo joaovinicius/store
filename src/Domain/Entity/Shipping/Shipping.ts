@@ -1,13 +1,17 @@
-import { TimestampsAndSoftDeletes } from '../../Base'
 import { IShipping } from './IShipping'
 
-export class Shipping extends TimestampsAndSoftDeletes implements IShipping {
+export class Shipping implements IShipping {
   public id: string
   public name: string
+  public createdAt: Date
+  public updatedAt: Date
+  public deletedAt?: Date
 
-  constructor (props: IShipping) {
-    super(props)
+  constructor(props: IShipping) {
     this.id = props.id
     this.name = props.name
+    this.createdAt = props.createdAt
+    this.updatedAt = props.updatedAt
+    this.deletedAt = props.deletedAt
   }
 }

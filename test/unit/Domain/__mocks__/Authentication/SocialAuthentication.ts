@@ -3,5 +3,6 @@ import { ISocialAuthentication } from '../../../../../src/Domain/Authentication/
 import { SocialAuthentication } from '../../../../../src/Domain/Authentication/SocialAuthentication/SocialAuthentication'
 
 export const mock: ISocialAuthentication = new SocialAuthentication({
-  token: faker.datatype.uuid()
+  token: faker.datatype.uuid(),
+  name: faker.name.firstName()
 })

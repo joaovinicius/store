@@ -1,22 +1,17 @@
 import { Category } from './Category'
 import { ICategory } from './ICategory'
+const now = new Date()
 
-export function CategoryFactory (
+export function CategoryFactory(
   id = '',
   name = '',
-  parentId = '',
-  children: ICategory[] = [],
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): Category {
   return new Category({
     id,
     name,
-    parentId,
-    children,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

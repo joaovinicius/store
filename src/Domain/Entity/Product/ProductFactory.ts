@@ -1,14 +1,14 @@
 import { Product } from './Product'
+const now = new Date()
 
-export function ProductFactory (
+export function ProductFactory(
   id = '',
   name = '',
   description = '',
   brand = '',
   model = '',
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): Product {
   return new Product({
     id,
@@ -17,7 +17,6 @@ export function ProductFactory (
     brand,
     model,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

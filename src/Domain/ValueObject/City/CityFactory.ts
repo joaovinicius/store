@@ -1,10 +1,9 @@
 import { IState, StateFactory } from '../State'
 import { City } from './City'
 
-export function CityFactory (
+export function CityFactory(
   id = '',
   name = '',
-  stateId = '',
   state: IState = StateFactory(),
   createdAt: Date = new Date(),
   updatedAt: Date = new Date(),
@@ -13,7 +12,6 @@ export function CityFactory (
   return new City({
     id,
     name,
-    stateId,
     state,
     createdAt,
     updatedAt,

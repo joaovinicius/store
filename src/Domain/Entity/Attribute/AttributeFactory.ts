@@ -1,17 +1,16 @@
 import { Attribute } from './Attribute'
+const now = new Date()
 
-export function AttributeFactory (
+export function AttributeFactory(
   id = '',
   name = '',
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): Attribute {
   return new Attribute({
     id,
     name,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

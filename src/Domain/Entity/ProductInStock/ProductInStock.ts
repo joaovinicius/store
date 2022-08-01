@@ -1,10 +1,9 @@
-import { TimestampsAndSoftDeletes } from '../../Base'
 import { IProduct } from '../Product/IProduct'
 import { IAttributeValue } from '../AttributeValue/IAttributeValue'
 import { IBuy } from '../Buy/IBuy'
 import { IProductInStock } from './IProductInStock'
 
-export class ProductInStock extends TimestampsAndSoftDeletes implements IProductInStock {
+export class ProductInStock implements IProductInStock {
   public id: string
   public barcode: string
   public product: IProduct
@@ -13,9 +12,11 @@ export class ProductInStock extends TimestampsAndSoftDeletes implements IProduct
   public purchasePrice: number
   public quantity: number
   public buy?: IBuy
+  public createdAt: Date
+  public updatedAt: Date
+  public deletedAt?: Date
 
-  constructor (props: IProductInStock) {
-    super(props)
+  constructor(props: IProductInStock) {
     this.id = props.id
     this.barcode = props.barcode
     this.product = props.product
@@ -24,5 +25,8 @@ export class ProductInStock extends TimestampsAndSoftDeletes implements IProduct
     this.purchasePrice = props.purchasePrice
     this.quantity = props.quantity
     this.buy = props.buy
+    this.createdAt = props.createdAt
+    this.updatedAt = props.updatedAt
+    this.deletedAt = props.deletedAt
   }
 }

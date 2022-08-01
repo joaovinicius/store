@@ -8,9 +8,9 @@ import {
 } from '../../../src/Support/Helper/TsMorph'
 
 const parentFolders = [
-  // 'Aggregate/',
-  // 'Entity/',
-  // 'Authentication/',
+  'Aggregate/',
+  'Entity/',
+  'Authentication/',
   'ValueObject/'
 ]
 
@@ -34,7 +34,7 @@ describe('Domain', () => {
       entityNames.push(entitiName, entityFactoryName, entityInterfaceName)
 
       const Entity = require(`../../../src/Domain/${folder}${ENTITY}`)
-      const Mock = require(`./__mocks__/${folder}${ENTITY}`)
+      const Mock = require(`./__mocks__/${folder}${ENTITY}`).mock
 
       describe(`Domain - ${folder}${entitiName}`, () => {
         test('The entity, factory and interface are being exported', () => {

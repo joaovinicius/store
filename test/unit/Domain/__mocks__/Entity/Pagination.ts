@@ -3,9 +3,8 @@ import { IPagination } from '../../../../../src/Domain/Entity/Pagination/IPagina
 import { Pagination } from '../../../../../src/Domain/Entity/Pagination/Pagination'
 
 export const mock: IPagination = new Pagination({
-  id: faker.datatype.uuid(),
-  name: faker.name.firstName(),
-  createdAt: new Date(),
-  updatedAt: new Date(),
-  deletedAt: new Date()
+  page: faker.datatype.number(),
+  limit: faker.datatype.number(),
+  total: faker.datatype.number(),
+  pages: faker.datatype.number()
 })

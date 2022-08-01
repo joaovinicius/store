@@ -1,14 +1,14 @@
 import { IAddress } from '../Address/IAddress'
 import { Contact } from './Contact'
+const now = new Date()
 
-export function ContactFactory (
+export function ContactFactory(
   id = '',
   email = '',
   phone = '',
   addresses: IAddress[] = [],
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt: Date = now,
+  updatedAt: Date = now
 ): Contact {
   return new Contact({
     id,
@@ -16,7 +16,6 @@ export function ContactFactory (
     phone,
     addresses,
     createdAt,
-    updatedAt,
-    deletedAt
+    updatedAt
   })
 }

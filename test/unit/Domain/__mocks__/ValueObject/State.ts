@@ -6,7 +6,7 @@ const now = new Date()
 export const mock: IState = new State({
   id: faker.datatype.uuid(),
   name: faker.name.firstName(),
-  abbr: faker.name.firstName(),
+  abbr: faker.name.firstName().slice(0, 2),
   createdAt: now,
   updatedAt: now
 })
