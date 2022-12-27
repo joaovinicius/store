@@ -1,7 +1,5 @@
 <script setup>
-// This starter layouts is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './Quasar/components/HelloWorld.vue'
 </script>
 
 <template>
@@ -21,7 +19,7 @@ import HelloWorld from './components/HelloWorld.vue'
       target="_blank"
     >
       <img
-        src="./assets/vue.svg"
+        src="/vue.svg"
         class="logo vue"
         alt="Vue logo"
       />

@@ -1,7 +1,6 @@
 import { User } from '../User/User'
 import { ModulePermission } from '../../Authentication/ModulePermission/ModulePermission'
 import { IAdmin } from './IAdmin'
-import { IUser } from '../User'
 
 export class Admin implements IAdmin {
   public id: string
