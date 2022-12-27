@@ -57,7 +57,8 @@
     "quasar": "^2.7.5",
     "ts-node": "^10.2.1",
     "universal-cookie": "^4.0.4",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.6"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
-import routes, { IRoute } from './routes'
+import routes from './Route'
+import { IRoute } from './Route/IRoute'
 dotenv.config();
 
 export default class Boot {

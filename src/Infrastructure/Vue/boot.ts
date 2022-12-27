@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import { Quasar } from 'quasar'
 import App from './App.vue'
+import router from './VueRouter'
 import '@quasar/extras/material-icons/material-icons.css'
 import 'quasar/src/css/index.sass'
 
@@ -17,6 +18,7 @@ export default class Boot {
   }
 
   setRoutes() {
+    this.app.use(router)
     return this
   }
 
