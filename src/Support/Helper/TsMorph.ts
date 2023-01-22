@@ -12,7 +12,10 @@ import {
 import uniq from 'lodash/uniq'
 
 const project = new Project()
-project.addSourceFilesAtPaths('./src/**/*.ts')
+project.addSourceFilesAtPaths([
+  './src/Domain/**/*.ts',
+  './src/Infrastructure/Express/Controller/**/*Dto.ts'
+])
 
 export interface FileDefinitions {
   all: string[]

@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import routes from './Route'
+import ValidationMiddleware from './Middleware/ValidationMiddleware'
 import { IRoute } from './Route/IRoute'
 dotenv.config();
 
@@ -29,8 +30,12 @@ export default class Boot {
   setRoutes() {
     this.routes = routes
     this.routes.forEach((route: IRoute) => {
-      console.log(route.controller)
-      this.app.use(route.path, route.middeware, route.controller[route.action])
+
+      this.app[route.method](
+        route.path,
+        [route.middeware, ...(route.dto ? [ValidationMiddleware(route.dto)]: [])],
+        route.controller
+      )
     })
     return this
   }

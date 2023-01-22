@@ -1,9 +1,10 @@
 import { Method } from 'Adapters/HttpClient'
+import { Request, Response, NextFunction } from 'express';
 
 export interface IRoute {
   path: string,
   method: Method,
-  middeware: any,
-  controller: any,
-  action: string,
+  middeware(req: Request, res: Response, next: NextFunction): void,
+  controller(req: Request, res: Response): void,
+  dto?: any
 }

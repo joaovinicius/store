@@ -1,17 +1,22 @@
 import { IRoute } from './IRoute'
+import error from './error'
+import HomeController from "../Controller/Home/HomeController";
+import HomeDto from "../Controller/Home/HomeDto";
 import PublicMiddleware from "../Middleware/PublicMiddleware";
-import HomeController from "../Controller/HomeController";
 
 const homeController = new HomeController()
 
 const routes: IRoute[] = [
+  // ...admin,
+  // ...auth,
+  ...error,
   {
     path: '/',
-    method: 'GET',
+    method: 'get',
     middeware: PublicMiddleware,
-    controller: homeController,
-    action: 'home'
-  }
+    controller: homeController.home,
+    dto: HomeDto
+  },
 ]
 
 export default routes;
