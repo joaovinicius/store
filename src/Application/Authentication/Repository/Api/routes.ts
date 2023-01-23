@@ -1,8 +1,8 @@
-import BaseRoutes from '../../../Infrastructure/Support/Helper/BaseRoutes'
+import BaseRoutes from '../../../../Support/Helper/BaseRoutes'
 
 class Routes extends BaseRoutes {
   constructor () {
-    super('auth/v1')
+    super('auth/')
   }
 
   get currentSession (): string {

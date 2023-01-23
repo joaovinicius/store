@@ -1,6 +1,6 @@
 import { IRoute } from './IRoute'
 import PublicMiddleware from "../Middleware/PublicMiddleware";
-import HomeController from "../Controller/Home/HomeController";
+import HomeController from "../Controller/HomeController";
 
 const homeController = new HomeController()
 

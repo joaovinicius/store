@@ -1,7 +1,7 @@
 export interface IAttribute {
-  id: string,
+  id?: string,
   name: string,
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt?: Date,
+  updatedAt?: Date,
   deletedAt?: Date
 }

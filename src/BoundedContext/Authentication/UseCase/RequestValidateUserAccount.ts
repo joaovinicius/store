@@ -1,5 +1,5 @@
 import { Repository } from '../Repository'
-import { IConfirmationAccountToken } from '../../../Domain/Authentication/ConfirmationAccount/IConfirmationAccountToken'
+import { IConfirmationAccountToken } from '../../../Domain/Authentication/ConfirmationAccountToken/IConfirmationAccountToken'
 import { Command } from '../../Command'
 
 export default class RequestValidateUserICandidate implements Command {
