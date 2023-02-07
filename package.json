@@ -15,9 +15,9 @@
     "preview": "vite preview",
     "update:server": "ls -l",
     "update:client": "ls -l",
-    "scaffold": "plop --plopfile tools/plop/plopfile.ts",
+    "generate": "plop --plopfile generator/index.ts",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
-    "setup": "node setup.js"
+    "nake": "node nake.js"
   },
   "devDependencies": {
     "@quasar/vite-plugin": "^1.0.10",

@@ -1,19 +1,51 @@
 'use strict'
-
+const { argv } = require('node:process')
 const { exec } = require('child_process')
 
-exec('ls -la', (error, stdout, stderr) => {
-  if (error) {
-    console.log(`error: ${error.message}`)
-    return
-  }
-  if (stderr) {
-    console.log(`stderr: ${stderr}`)
-    return
-  }
-  console.log(`stdout: ${stdout}`)
-})
+const commands = {
+  help: {
+    description: 'List all commands',
+    command: () => {
+      console.log('\nUsage: yarn nake [options]\n\n', 'Options:\n')
+      for (const [key, value] of Object.entries(commands)) {
+        console.log(` - ${key}: ${value.description}`);
+      }
+      console.log('\nDocumentation can be found at ./nake.js\n')
+    }
+  },
+  la: {
+    description: 'Run ls -a on terminal',
+    command: 'ls -la',
+  },
+}
 
+
+argv.forEach((val) => {
+  if (commands[val]) {
+    execute(val)
+  }
+});
+
+function execute(key) {
+  console.log(commands[key].description)
+  if (typeof commands[key].command === 'function') {
+    commands[key].command()
+  }
+
+  if (typeof commands[key].command === 'string') {
+    exec(commands[key].command, (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`)
+        return
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`)
+        return
+      }
+      console.log(`stdout: ${stdout}`)
+    })
+  }
+}
 // task :default do
 //     sh "rake -T"
 // end
