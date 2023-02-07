@@ -30,7 +30,6 @@ export default class Boot {
   setRoutes() {
     this.routes = routes
     this.routes.forEach((route: IRoute) => {
-
       this.app[route.method](
         route.path,
         [route.middeware, ...(route.dto ? [ValidationMiddleware(route.dto)]: [])],
