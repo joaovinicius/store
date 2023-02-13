@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../Page/store/index.vue'
+import Home from '../Quasar/components/pages/store/index.vue'
 
 export default createRouter({
   history: createWebHistory(),

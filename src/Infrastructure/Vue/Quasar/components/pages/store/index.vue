@@ -1,10 +1,7 @@
 
 <template>
   <div>
-    <a
-      href="https://vitejs.dev"
-      target="_blank"
-    >
+    <a href="https://vitejs.dev" target="_blank">
       <img
         src="/vite.svg"
         class="logo"
@@ -27,11 +24,11 @@
 
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from 'vue'
-
+// /home/joaodepaula/store/src/
 export default defineComponent({
   components: {
     HelloWorld: defineAsyncComponent(() =>
-      import('../../Quasar/components/HelloWorld.vue')
+      import('components/HelloWorld.vue')
     )
   },
   data() {
