@@ -7,9 +7,10 @@ import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 export default defineConfig({
   root: './apps/client',
   resolve: {
-    alias: {
-      '@infra': path.resolve(__dirname, './src/Infrastructure')
-    }
+    alias: [
+      { find: 'src', replacement: path.resolve(__dirname, 'src') },
+      { find: 'components', replacement: path.resolve(__dirname, 'src/Infrastructure/Vue/Quasar/components') },
+    ]
   },
   build: {
     // generate manifest.json in outDir
