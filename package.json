@@ -17,7 +17,8 @@
     "update:client": "ls -l",
     "generate": "plop --plopfile generator/index.ts",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
-    "nake": "node nake.js"
+    "nake": "node nake.js",
+    "setup": "yarn install && node nake.js setup"
   },
   "devDependencies": {
     "@quasar/vite-plugin": "^1.0.10",

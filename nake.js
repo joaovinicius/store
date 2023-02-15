@@ -2,6 +2,44 @@
 const { argv } = require('node:process')
 const { exec } = require('child_process')
 
+let commandArgs = []
+
+function execute(key) {
+  return exec(commands[key].command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`error: ${error.message}`);
+      return
+    }
+    if (stderr) {
+      console.error(`stderr: ${stderr}`);
+      return
+    }
+    console.log(`stdout: ${stdout}`)
+  })
+}
+
+function executeFirst() {
+  const current = commandArgs.shift()
+  console.log(commands[current].description)
+
+  if (typeof commands[current].command === 'function') {
+    commands[current].command()
+    return
+  }
+
+  if (typeof commands[current].command === 'string') {
+    const result = execute(current)
+
+    result.on('close', code => {
+      const successAndQueued = code === 0 && commandArgs.length
+      const errorWithSkipAndQueued = code === 1 && commandArgs.length && commands[current]?.skip === true
+      if (successAndQueued || errorWithSkipAndQueued) {
+        executeFirst()
+      }
+    });
+  }
+}
+
 const commands = {
   help: {
     description: 'List all commands',
@@ -13,135 +51,62 @@ const commands = {
       console.log('\nDocumentation can be found at ./nake.js\n')
     }
   },
-  la: {
-    description: 'Run ls -a on terminal',
-    command: 'ls -la',
+  checkDockerExist: {
+    description: 'Check docker exist',
+    command: 'docker -v',
+    skip: false
+  },
+  createDockerNetwork: {
+    description: 'Create docker network',
+    command: 'docker network create store',
+    skip: true
+  },
+  createVolumeFolder: {
+    description: 'Create volume folder',
+    command: 'mkdir ~/.store',
+    skip: true
+  },
+  dockerComposeUp: {
+    description: 'Up docker services',
+    command: 'docker compose up',
+    skip: true
+  },
+  restart: {
+    description: 'Restart docker services',
+    command: 'docker compose restart'
+  },
+  stop: {
+    description: 'Stop docker services',
+    command: 'docker compose stop'
+  },
+  // createDatabase: {
+  //   description: 'Create store database',
+  //   command: 'PGPASSWORD=development createdb -U root -h localhost abler'
+  // },
+  // indexElasticSearch
+  // generate swagger
+  // generate storybook
+  // run migrations
+  setup: {
+    description: 'Run full setup',
+    command: () => {
+      commandArgs = [
+        'install',
+        'checkDockerExist',
+        'createDockerNetwork',
+        'createVolumeFolder',
+        'dockerComposeUp'
+      ]
+      executeFirst()
+    }
   },
 }
 
+const commandOptions = Object.keys(commands)
+commandArgs = argv.filter(item => commandOptions.includes(item))
 
-argv.forEach((val) => {
-  if (commands[val]) {
-    execute(val)
-  }
-});
-
-function execute(key) {
-  console.log(commands[key].description)
-  if (typeof commands[key].command === 'function') {
-    commands[key].command()
-  }
-
-  if (typeof commands[key].command === 'string') {
-    exec(commands[key].command, (error, stdout, stderr) => {
-      if (error) {
-        console.log(`error: ${error.message}`)
-        return
-      }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`)
-        return
-      }
-      console.log(`stdout: ${stdout}`)
-    })
-  }
+if (commandArgs.length) {
+  executeFirst()
+} else {
+  execute('help')
 }
-// task :default do
-//     sh "rake -T"
-// end
-
-// desc "Clean cache"
-// task :clean do
-//     sh "sudo rm -Rf node_modules || rm -Rf lib || rm yarn.lock || rm .rake_tasks~ || yarn cache clean"
-// end
-
-// desc "Setup docker tools"
-// task :setup_tools do
-//     sh "cd tools/server && docker network create abler || docker-compose up --build -d postgres elasticsearch redis"
-// end
-
-// desc "Stop docker tools"
-// task :stop_tools do
-//     sh "cd tools/server && docker-compose stop"
-// end
-
-// desc "Restart docker tools"
-// task :restart_tools do
-//     sh "cd tools/server && docker-compose restart"
-// end
-
-// desc "Create abler database"
-// task :create_database do
-//     sh "PGPASSWORD=development createdb -U root -h localhost abler"
-// end
-
-// desc "Import database backup"
-// task :import_backup do
-//     sh "PGPASSWORD=development pg_restore -O -Fc -v -x -j 4 -h localhost -U root -d abler tools/server/backup/2021-03-16.backup"
-// end
-
-// desc "Index all elasticsearch data"
-// task :index_elasticsearch do
-//     sh "cd tools/server/ats-monolith && echo 'Candidate.__elasticsearch__.create_index! force: true; City.__elasticsearch__.create_index! force: true; SharedEngine::Institution.__elasticsearch__.create_index! force: true; Candidate.__elasticsearch__.import; City.__elasticsearch__.import'; SharedEngine::Institution.__elasticsearch__.import | rails c"
-// end
-
-// desc "Clone server and install"
-// task :setup_server do
-//     sh "cd tools/server && git clone git@github.com:Abler-Recrutamento-Digital/ats-monolith.git || cd ats-monolith && git checkout dev && git config pull.ff only && git pull && bundle install && yarn install"
-// end
-
-// desc "Clone server docs and install"
-// task :setup_docs do
-//     sh "cd tools/server && git clone git@github.com:Abler-Recrutamento-Digital/ats-docs.git || cd ats-docs && yarn install && git config pull.ff only"
-// end
-
-// desc "Start server docs"
-// task :start_docs do
-//     sh "cd tools/server/ats-docs && yarn start"
-// end
-
-// desc "Run migrations in server"
-// task :migrate_server do
-//     sh "cd tools/server/ats-monolith && rake db:migrate"
-// end
-
-// desc "Git pull in server"
-// task :gpull_server do
-//     sh "cd tools/server/ats-monolith && git pull"
-// end
-
-// desc "Git stash and pull in server"
-// task :gspull_server do
-//     sh "cd tools/server/ats-monolith && git add . && git stash && git pull"
-// end
-
-// desc "Git pull docs"
-// task :gpull_docs do
-//     sh "cd tools/server/ats-docs && git pull"
-// end
-
-// desc "Rails server start"
-// task :start_server do
-//     sh "cd tools/server/ats-monolith && rails s"
-// end
-
-// desc "Rails server command"
-// task :command_server do
-//     sh "cd tools/server/ats-monolith && rails c"
-// end
-
-// desc "Full tools setup"
-// task :fsetup_tools do
-//     Rake::Task['setup_tools'].invoke
-//     Rake::Task['create_database'].invoke
-//     Rake::Task['import_backup'].invoke
-// end
-
-// desc "Full server setup"
-// task :fsetup_server do
-//     Rake::Task['setup_server'].invoke
-//     Rake::Task['fsetup_tools'].invoke
-//     Rake::Task['migrate_server'].invoke
-//     Rake::Task['index_elasticsearch'].invoke
-//     Rake::Task['start_server'].invoke
-// end
