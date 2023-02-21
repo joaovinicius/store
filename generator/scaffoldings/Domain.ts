@@ -20,31 +20,31 @@ const PromptDomainFolder = {
 
 const AddEntity = {
   type: 'add',
-  path: '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}.ts',
+  path: '../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}.ts',
   templateFile: 'templates/Domain/Entity.hbs'
 }
 
 const AddInterface = {
   type: 'add',
-  path: '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/I{{pascalCase name}}.ts',
+  path: '../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/I{{pascalCase name}}.ts',
   templateFile: 'templates/Domain/Interface.hbs'
 }
 
 const AddFactory = {
   type: 'add',
-  path: '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}Factory.ts',
+  path: '../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}Factory.ts',
   templateFile: 'templates/Domain/Factory.hbs'
 }
 
 const AddIndex = {
   type: 'add',
-  path: '../../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/index.ts',
+  path: '../src/Domain/{{pascalCase folder}}/{{pascalCase name}}/index.ts',
   templateFile: 'templates/Domain/index.hbs'
 }
 
 const AddMock = {
   type: 'add',
-  path: '../../test/unit/Domain/__mocks__/{{pascalCase folder}}/{{pascalCase name}}.ts',
+  path: '../test/unit/Domain/__mocks__/{{pascalCase folder}}/{{pascalCase name}}.ts',
   templateFile: 'templates/Domain/Mock.hbs'
 }
 

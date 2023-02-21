@@ -5,7 +5,7 @@ const PromptBoundedContext = {
   name: 'folder',
   message: 'Bounded context',
   choices: [
-    { name: 'Admin', value: 'Entity' },
+    { name: 'Admin', value: 'Admin' },
     { name: 'Authentication', value: 'Authentication' },
     { name: 'Store', value: 'Store' }
   ]
@@ -14,7 +14,7 @@ const PromptBoundedContext = {
 const PromptDomainName = {
   type: 'list',
   name: 'folder',
-  message: 'Bounded context',
+  message: 'Select the domain',
   choices: [
     { name: 'Admin', value: 'Entity' },
     { name: 'Authentication', value: 'Authentication' },
@@ -36,19 +36,19 @@ const PromptUseCaseHasParam = {
 
 const AddRepository = {
   type: 'add',
-  path: '../../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/Repository.ts',
+  path: '../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/Repository.ts',
   templateFile: 'templates/BoundedContext/Repository.hbs'
 }
 
 const AddUseCase = {
   type: 'add',
-  path: '../../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/UseCase/{{pascalCase usecase}}.ts',
+  path: '../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/UseCase/{{pascalCase usecase}}.ts',
   templateFile: 'templates/BoundedContext/UseCase.hbs'
 }
 
 const AddTest = {
   type: 'add',
-  path: '../../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}.spec.ts',
+  path: '../src/BoundedContext/{{pascalCase folder}}/{{pascalCase name}}/{{pascalCase name}}.spec.ts',
   templateFile: 'templates/BoundedContext/Spec.hbs'
 }
 
