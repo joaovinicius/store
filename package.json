@@ -10,11 +10,9 @@
   "scripts": {
     "test": "jest",
     "server": "nodemon",
-    "client": "vite",
+    "web": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "update:server": "ls -l",
-    "update:client": "ls -l",
     "generate": "plop --plopfile generator/index.ts",
     "lint": "eslint --ext .ts --ignore-path .gitignore .",
     "nake": "node nake.js",
