@@ -3,6 +3,7 @@ import { Quasar } from 'quasar'
 import { App as IApp } from 'vue';
 import App from './App.vue'
 import router from './VueRouter'
+import store from './Vuex'
 import '@quasar/extras/material-icons/material-icons.css'
 import 'quasar/src/css/index.sass'
 
@@ -23,6 +24,7 @@ export default class Boot {
 
   setRoutes() {
     this.app.use(router)
+    this.app.use(store)
     return this
   }
 
