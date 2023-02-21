@@ -8,8 +8,14 @@ export default defineConfig({
   root: './apps/client',
   resolve: {
     alias: [
-      { find: 'src', replacement: path.resolve(__dirname, 'src') },
-      { find: 'components', replacement: path.resolve(__dirname, 'src/Infrastructure/Vue/Quasar/components') },
+      {
+        find: 'src',
+        replacement: path.resolve(__dirname, 'src')
+      },
+      {
+        find: 'components',
+        replacement: path.resolve(__dirname, 'src/Infrastructure/Vue/Quasar/components')
+      },
     ]
   },
   build: {
