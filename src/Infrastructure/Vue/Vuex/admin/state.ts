@@ -1,5 +1,9 @@
-export interface IAdminState {}
+export interface IAdminState {
+  rules: string[]
+}
 
-const state = (): IAdminState => ({})
+const state = (): IAdminState => ({
+  rules: []
+})
 
 export default state

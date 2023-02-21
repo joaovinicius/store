@@ -1,5 +1,5 @@
 import { Category } from './Category'
-import { ICategory } from './ICategory'
+
 const now = new Date()
 
 export function CategoryFactory(

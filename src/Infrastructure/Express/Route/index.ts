@@ -1,7 +1,7 @@
 import { IRoute } from './IRoute'
 import error from './error'
-import HomeController from "../Controller/HomeController";
-import PublicMiddleware from "../Middleware/PublicMiddleware";
+import HomeController from '../Controller/HomeController'
+import PublicMiddleware from '../Middleware/PublicMiddleware'
 
 const homeController = new HomeController()
 
@@ -13,8 +13,8 @@ const routes: IRoute[] = [
     path: '/',
     method: 'get',
     middeware: PublicMiddleware,
-    controller: homeController.home,
-  },
+    controller: homeController.home
+  }
 ]
 
-export default routes;
+export default routes

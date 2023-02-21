@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-// import { getClassAttibutes } from '../../../Support/Helper/TsMorph'
 
 export default function ValidationMiddleware(DataTransferObject: any) {
   return (req: Request, res: Response, next: NextFunction) => {

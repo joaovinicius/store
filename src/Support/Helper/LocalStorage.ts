@@ -1,6 +1,6 @@
 import unionBy from 'lodash/unionBy'
-import {LocalStorageClient} from '../../Adapters/LocalStorageClient'
-import { Collection } from '../../Domain/Collection'
+import { LocalStorageClient } from 'Adapters/LocalStorageClient'
+import { Collection } from 'Domain/Collection'
 
 const CACHE_KEY = 'CACHE_KEY'
 

@@ -1,5 +1,9 @@
-export interface IStoreState {}
+export interface IStoreState {
+  categories: []
+}
 
-const state = (): IStoreState => ({})
+const state = (): IStoreState => ({
+  categories: []
+})
 
 export default state

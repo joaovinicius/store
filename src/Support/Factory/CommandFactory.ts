@@ -1,4 +1,4 @@
-import { Command } from '../../BoundedContext/Command'
+import { Command } from 'BoundedContext/Command'
 
 export interface IUseCase {
   new (repository: unknown): Command

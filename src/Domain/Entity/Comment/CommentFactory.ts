@@ -1,7 +1,7 @@
 import { IUser } from '../../Aggregate/User/IUser'
 import { UserFactory } from '../../Aggregate/User/UserFactory'
 import { Comment } from './Comment'
-import { IComment } from './IComment'
+
 const now = new Date()
 
 export function CommentFactory(

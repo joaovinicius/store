@@ -1,3 +1,8 @@
 import { IAdminState } from './state'
 
-export default {}
+export default {
+  SET_RULES: (
+    state: IAdminState,
+    payload: string[]
+  ) => state.rules = payload
+}
