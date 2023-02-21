@@ -108,5 +108,5 @@ commandArgs = argv.filter(item => commandOptions.includes(item))
 if (commandArgs.length) {
   executeFirst()
 } else {
-  execute('help')
+  commands.help.command()
 }
