@@ -1,4 +1,5 @@
 import express, { Express } from 'express';
+import cors from 'cors'
 import dotenv from 'dotenv';
 import routes from './Route'
 import ValidationMiddleware from './Middleware/ValidationMiddleware'
@@ -24,6 +25,7 @@ export default class Boot {
     this.port = process.env.API_PORT || '3001';
     this.protocol = process.env.API_PROTOCOL || 'http';
     this.url = process.env.API_URL || 'localhost';
+    this.app.use(cors())
     return this
   }
 
