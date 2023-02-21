@@ -1,10 +1,20 @@
 <template>
-  <div>
-    <h1>template</h1>
+  <template-store>
     <router-view />
-  </div>
+  </template-store>
 </template>
 
+<script lang="ts">
+import { defineComponent, defineAsyncComponent } from 'vue'
+
+export default defineComponent({
+  components: {
+    TemplateStore: defineAsyncComponent(() =>
+      import('components/templates/TemplateStore.vue')
+    )
+  },
+})
+</script>
 <style scoped>
 .logo {
   height: 6em;
