@@ -1,20 +1,23 @@
 import { IRoute } from './IRoute'
-import error from './error'
-import HomeController from '../Controller/HomeController'
-import PublicMiddleware from '../Middleware/PublicMiddleware'
+import admin from './admin'
+import authentication from './authentication'
+import store from './store'
 
-const homeController = new HomeController()
+import PublicMiddleware from '../Middleware/PublicMiddleware'
+import ErrorController from '../Controller/ErrorController'
+
+const errorController = new ErrorController()
 
 const routes: IRoute[] = [
-  // ...admin,
-  // ...auth,
-  ...error,
+  ...admin,
+  ...authentication,
+  ...store,
   {
-    path: '/',
+    path: '/*',
     method: 'get',
     middeware: PublicMiddleware,
-    controller: homeController.home
-  }
+    controller: errorController.byCode
+  },
 ]
 
 export default routes

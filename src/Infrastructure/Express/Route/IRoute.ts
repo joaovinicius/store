@@ -6,5 +6,5 @@ export interface IRoute {
   method: Method,
   middeware(req: Request, res: Response, next: NextFunction): void,
   controller(req: Request, res: Response): void,
-  dto?: any
+  dto?: never
 }

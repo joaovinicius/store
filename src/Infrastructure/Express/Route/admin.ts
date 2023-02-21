@@ -1,15 +1,16 @@
 import { IRoute } from './IRoute'
-import PublicMiddleware from '../Middleware/PublicMiddleware'
-import HomeController from '../Controller/HomeController'
+import AdminMiddleware from '../Middleware/AdminMiddleware'
+import DashboardControlller from '../Controller/Admin/DashboardControlller'
 
-const homeController = new HomeController()
+const PREFIX = 'admin'
+const dashboardControlller = new DashboardControlller()
 
 const routes: IRoute[] = [
   {
-    path: '/',
+    path: `${PREFIX}/dashboard`,
     method: 'get',
-    middeware: PublicMiddleware,
-    controller: homeController.home
+    middeware: AdminMiddleware,
+    controller: dashboardControlller.dashboard
   }
 ]
 

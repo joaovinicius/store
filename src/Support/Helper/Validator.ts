@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import validator from 'validator';
 
 export interface IRule {

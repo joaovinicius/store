@@ -3,7 +3,7 @@ import authentication from './authentication'
 import admin from './admin'
 import store from './store'
 
-export interface IRootState  {
+export interface IRootState {
   count: number,
 }
 
