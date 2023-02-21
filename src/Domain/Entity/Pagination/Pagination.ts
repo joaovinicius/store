@@ -7,6 +7,7 @@ export class Pagination implements IPagination {
   public total: number
   public pages: number
   public orderBy?: OrderBy
+  public q?: string | object
 
   constructor (props: IPagination) {
     this.page = props.page
@@ -14,5 +15,6 @@ export class Pagination implements IPagination {
     this.total = props.total
     this.pages = props.pages
     this.orderBy = props.orderBy
+    this.q = props.q
   }
 }

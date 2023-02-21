@@ -5,5 +5,6 @@ export interface IPagination {
   limit: number,
   total: number,
   pages: number,
-  orderBy?: OrderBy
+  orderBy?: OrderBy,
+  q?: string | object
 }

@@ -6,13 +6,15 @@ export function PaginationFactory (
   limit = 0,
   total = 0,
   pages = 0,
-  orderBy: OrderBy = 'asc'
+  orderBy: OrderBy = 'asc',
+  q: string | object = ''
 ): Pagination {
   return new Pagination({
     page,
     limit,
     total,
     pages,
-    orderBy
+    orderBy,
+    q
   })
 }
