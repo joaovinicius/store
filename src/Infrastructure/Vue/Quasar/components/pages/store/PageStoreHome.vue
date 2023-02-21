@@ -4,8 +4,18 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
+<script lang="ts">
+export default {
+  mounted() {
+    console.log(
+      this.$axios.get('api/store/home'),
+      this.$store,
+      this.$router,
+      this.$route,
+      this.$q
+    )
+  }
+}
 </script>
 
 <style scoped>
