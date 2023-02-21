@@ -1,13 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../Quasar/components/pages/store/index.vue'
+import admin from './admin'
+import authentication from './authentication'
+import store from './store'
 
 export default createRouter({
   history: createWebHistory(),
   routes: [
+    authentication,
+    admin,
+    store,
     {
-      path: '/',
-      name: 'Home',
-      component: Home,
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('components/pages/PageError.vue'),
     },
   ],
 })
