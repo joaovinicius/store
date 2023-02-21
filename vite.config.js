@@ -1,11 +1,16 @@
 import { defineConfig } from 'vite'
+import dotenv from 'dotenv';
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
+dotenv.config();
 
 // https://vitejs.dev/config/
 export default defineConfig({
   root: './apps/web',
+  define: {
+    'process.env': process.env
+  },
   resolve: {
     alias: [
       {
