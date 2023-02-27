@@ -63,7 +63,7 @@ const commands = {
   },
   createVolumeFolder: {
     description: 'Create volume folder',
-    command: 'mkdir ~/.store',
+    command: 'mkdir ~/.store ~/.store/postgres_authentication ~/.store/postgres_store',
     skip: true
   },
   dockerComposeUp: {
@@ -91,7 +91,6 @@ const commands = {
     description: 'Run full setup',
     command: () => {
       commandArgs = [
-        'install',
         'checkDockerExist',
         'createDockerNetwork',
         'createVolumeFolder',
