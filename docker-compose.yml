@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  postgres:
+  postgres_authentication:
     image: postgres
     ports:
       - 5432:5432
@@ -8,7 +8,27 @@ services:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=development
     volumes:
-      - ~/.store:/var/lib/postgresql/data
+      - ~/.store/postgres_authentication:/var/lib/postgresql/data
+
+  redis_authentication:
+    image: redis:3.2
+    ports:
+      - 6379:6379
+
+  postgres_store:
+    image: postgres
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=development
+    volumes:
+      - ~/.store/postgres_store:/var/lib/postgresql/data
+
+  redis_store:
+    image: redis:3.2
+    ports:
+      - 6380:6379
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
@@ -17,11 +37,6 @@ services:
     ports:
     - 9200:9200
     - 9300:9300
-
-  redis:
-    image: redis:3.2
-    ports:
-      - 6379:6379
 
 networks:
   default:
