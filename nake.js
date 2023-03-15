@@ -63,7 +63,7 @@ const commands = {
   },
   createVolumeFolder: {
     description: 'Create volume folder',
-    command: 'mkdir ~/.store ~/.store/postgres_authentication ~/.store/postgres_store',
+    command: 'mkdir ~/.store',
     skip: true
   },
   dockerComposeUp: {
@@ -79,10 +79,10 @@ const commands = {
     description: 'Stop docker services',
     command: 'docker compose stop'
   },
-  // createDatabase: {
-  //   description: 'Create store database',
-  //   command: 'PGPASSWORD=development createdb -U root -h localhost abler'
-  // },
+  createDatabase: {
+    description: 'Create store database',
+    command: 'PGPASSWORD=development createdb -U root -h localhost store'
+  },
   // indexElasticSearch
   // generate swagger
   // generate storybook
