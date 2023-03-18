@@ -1,12 +1,15 @@
 import type { Knex } from "knex";
 
-// Update with your config settings.
-
 const config: { [key: string]: Knex.Config } = {
   development: {
-    client: "sqlite3",
+    client: "postgresql",
     connection: {
-      filename: "./dev.sqlite3"
+      database: "store",
+      user: "root",
+      password: "development"
+    },
+    migrations: {
+      tableName: "migrations"
     }
   },
 
