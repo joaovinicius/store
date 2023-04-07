@@ -18,8 +18,8 @@ export default defineConfig({
         replacement: path.resolve(__dirname, 'src')
       },
       {
-        find: 'components',
-        replacement: path.resolve(__dirname, 'src/Infrastructure/Vue/Quasar/components')
+        find: 'Components',
+        replacement: path.resolve(__dirname, 'src/Infrastructure/Vue/Quasar/Components')
       },
     ]
   },

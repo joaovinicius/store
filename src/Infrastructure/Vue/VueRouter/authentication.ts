@@ -4,7 +4,7 @@ export default {
   path: '/authentication/',
   name: 'Authentication',
   component: () =>
-    import('components/pages/authentication/PageAuthenticationLogin.vue'),
+    import('src/Infrastructure/Vue/Quasar/Components/Pages/Authentication/Login.vue'),
   meta: { template: 'authentication' },
   beforeEnter: (to: RouteLocationNormalized, from: RouteLocationNormalized) => {
     console.log(to, from)

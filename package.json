@@ -13,7 +13,7 @@
     "web": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "generate": "plop --plopfile generator/index.ts",
+    "new": "plop --plopfile src/Support/Generator/index.ts",
     "lint": "eslint --ext .ts,vue --ignore-path .gitignore .",
     "nake": "node nake.js",
     "setup": "yarn install && node nake.js setup"

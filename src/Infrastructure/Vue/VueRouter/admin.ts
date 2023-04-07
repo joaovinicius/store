@@ -14,7 +14,7 @@ export default {
     {
       path: 'dashboard',
       name: 'PageAdminDashboard',
-      component: () => import('components/pages/admin/PageAdminDashboard.vue'),
+      component: () => import('src/Infrastructure/Vue/Quasar/Components/Pages/Admin/Dashboard.vue'),
     }
   ]
 }

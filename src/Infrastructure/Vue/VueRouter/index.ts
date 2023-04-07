@@ -12,7 +12,7 @@ export default createRouter({
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
-      component: () => import('components/pages/PageError.vue'),
+      component: () => import('Components/Pages/PageError.vue'),
     },
   ],
 })

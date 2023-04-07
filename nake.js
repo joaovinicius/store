@@ -94,7 +94,7 @@ const commands = {
   },
   up: {
     description: 'Up docker services',
-    command: 'docker compose up',
+    command: 'docker compose up -d',
     skip: true
   },
   restart: {
@@ -104,10 +104,6 @@ const commands = {
   stop: {
     description: 'Stop docker services',
     command: 'docker compose stop'
-  },
-  'create-database': {
-    description: 'Create store database',
-    command: 'PGPASSWORD=development createdb -U root -h localhost store && PGPASSWORD=development createdb -U root -h localhost admin && PGPASSWORD=development createdb -U root -h localhost authentication'
   },
   migrate: {
     description: 'Run all migrations (default) or especify the contexts with a flag option',
@@ -188,8 +184,7 @@ const commands = {
         'check-docker-exist',
         'create-network',
         'create-volume-folder',
-        'create-database',
-        'up'
+        'up',
       ]
       executeFirst()
     }

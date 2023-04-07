@@ -10,7 +10,7 @@ import { defineComponent, defineAsyncComponent } from 'vue'
 export default defineComponent({
   components: {
     TemplateStore: defineAsyncComponent(() =>
-      import('components/templates/TemplateStore.vue')
+      import('Components/Templates/TemplateStore.vue')
     )
   }
 })

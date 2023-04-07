@@ -1,50 +1,53 @@
 import type { Knex } from "knex";
 
+const CLIENT = "postgresql";
+const MIGRATION_TABLE_NAME = "authentication_migrations";
+const USER = process.env.AUTHENTICATION_POSTGRES_USER || 'root';
+const PASSWORD = process.env.AUTHENTICATION_POSTGRES_PASSWORD || 'development';
+const DATABASE = process.env.AUTHENTICATION_POSTGRES_DATABASE || 'postgres';
+
 const config: { [key: string]: Knex.Config } = {
   development: {
-    client: "postgresql",
+    client: CLIENT,
     connection: {
-      database: "store",
-      user: "root",
-      password: "development"
+      database: DATABASE,
+      user: USER,
+      password: PASSWORD
     },
     migrations: {
-      tableName: "migrations"
+      tableName: MIGRATION_TABLE_NAME
     }
   },
-
   staging: {
-    client: "postgresql",
+    client: CLIENT,
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      database: DATABASE,
+      user: USER,
+      password: PASSWORD
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations"
+      tableName: MIGRATION_TABLE_NAME
     }
   },
-
   production: {
-    client: "postgresql",
+    client: CLIENT,
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      database: DATABASE,
+      user: USER,
+      password: PASSWORD
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations"
+      tableName: MIGRATION_TABLE_NAME
     }
   }
-
 };
 
 module.exports = config;

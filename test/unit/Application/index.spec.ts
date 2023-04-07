@@ -38,5 +38,6 @@ contexts.forEach((context: string) => {
     test('Every repository methods are implemented in the service', () => {
       expect(repositoryMethods.sort()).toEqual(methods.sort())
     })
+    // ClientService and ServerService need implement the same actions
   })
 })

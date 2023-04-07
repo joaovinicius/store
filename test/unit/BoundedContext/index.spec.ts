@@ -20,21 +20,20 @@ parentFolders.forEach((folder: string) => {
 
 contexts.forEach((context: string) => {
   describe(`BoundedContext - ${context}`, () => {
-    const files = fs.readdirSync(`./src/BoundedContext/${context}/UseCase`, {
-      withFileTypes: true
-    })
+    const files = fs.readdirSync(
+      `./src/BoundedContext/${context}/UseCase`,
+      { withFileTypes: true }
+    )
     const fileNames = files
       .filter((item: Dirent) => item.isFile())
       .map((item) => item.name.replace(/\.[^/.]+$/, ''))
-    const methods = getInterfaceMethodsFromPath(
-      `./src/BoundedContext/${context}/Repository`
-    ).map((item: string) => `${item.charAt(0).toUpperCase()}${item.slice(1)}`)
 
-    test('There is an use case for each method defined in the repository contract', () => {
-      expect(fileNames.sort()).toEqual(methods.sort())
-    })
+    const methods = getInterfaceMethodsFromPath(`./src/BoundedContext/${context}/Repository`)
+      .map((item: string) => `${item.charAt(0).toUpperCase()}${item.slice(1)}`)
 
-    // todo: use case use right method from repository
-    // imports only interface
+    test(
+      'There is an use case for each method defined in the repository contract',
+      () => { expect(fileNames.sort()).toEqual(methods.sort()) }
+    )
   })
 })

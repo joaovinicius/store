@@ -7,7 +7,7 @@ export default {
     {
       path: 'home',
       name: 'PageStoreHome',
-      component: () => import('components/pages/store/PageStoreHome.vue'),
+      component: () => import('src/Infrastructure/Vue/Quasar/Components/Pages/Store/Home.vue'),
     }
     // home
     // category/:slug
