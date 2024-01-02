@@ -13,7 +13,8 @@ export function AddressFactory(
   stateName = '',
   stateAbbr = '',
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined
 ): Address {
   return new Address({
     id,
@@ -27,6 +28,7 @@ export function AddressFactory(
     stateName,
     stateAbbr,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

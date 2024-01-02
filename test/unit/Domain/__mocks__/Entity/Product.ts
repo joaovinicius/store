@@ -8,5 +8,8 @@ export const mock: IProduct = new Product({
   name: faker.name.firstName(),
   createdAt: now,
   updatedAt: now,
-  deletedAt: now
+  deletedAt: now,
+  description: faker.lorem.paragraph(),
+  brand: faker.name.firstName(),
+  model: faker.name.firstName(),
 })

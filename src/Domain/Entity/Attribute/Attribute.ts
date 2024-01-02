@@ -1,5 +1,5 @@
 import { IAttribute } from './IAttribute'
-import Validate from '../../../Support/Helper/Validator'
+// import Validate from '../../../Support/Helper/Validator'
 export class Attribute implements IAttribute {
   public id?: string
   public name: string
@@ -8,9 +8,9 @@ export class Attribute implements IAttribute {
   public deletedAt?: Date
 
   constructor(props: IAttribute) {
-    Validate({
-      name: ['isNotEmpty', 'isAlpha']
-    }, props)
+    // Validate({
+    //   name: ['isNotEmpty', 'isAlpha']
+    // }, props)
 
     this.id = props.id
     this.name = props.name

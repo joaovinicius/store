@@ -1,20 +1,22 @@
-// import faker from 'faker'
-// import { IProductInStock } from '../../../../../src/Domain/Entity/ProductInStock/IProductInStock'
-// import { ProductInStock } from '../../../../../src/Domain/Entity/ProductInStock/ProductInStock'
-// const now = new Date()
+import faker from 'faker'
+import { IProductInStock } from '../../../../../src/Domain/Entity/ProductInStock/IProductInStock'
+import { ProductInStock } from '../../../../../src/Domain/Entity/ProductInStock/ProductInStock'
+import {mock as ProductMock} from './Product'
+import {mock as BuyMock} from './Buy'
+const now = new Date()
+const price = faker.datatype.number(100)
+export const mock: IProductInStock = new ProductInStock({
+  id: faker.datatype.uuid(),
 
-// export const mock: IProductInStock = new ProductInStock({
-//   id: faker.datatype.uuid(),
+  barcode: faker.datatype.string(),
+  product: ProductMock,
+  attributeValues: [],
+  salePrice: price,
+  purchasePrice: price,
+  quantity: 1,
+  buy: BuyMock,
 
-//   barcode: string = '',
-//   product: IProduct,
-//   attributeValues: IAttributeValue[],
-//   salePrice: number = 0,
-//   purchasePrice: number = 0,
-//   quantity: number = 0,
-//   buy?: IBuy,
-
-//   createdAt: now,
-//   updatedAt: now,
-//   deletedAt: now
-// })
+  createdAt: now,
+  updatedAt: now,
+  deletedAt: now
+})
