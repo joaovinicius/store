@@ -9,7 +9,7 @@ import {
 
 const parentFolders = [
   // 'Aggregate/',
-  // 'Entity/',
+  'Entity/',
   'Authentication/',
   'ValueObject/'
 ]
