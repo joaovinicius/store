@@ -8,7 +8,7 @@ const now = new Date()
 export function CommentFactory(
   id = '',
   name = '',
-  from: IUser = UserFactory(),
+  from = UserFactory(),
   message = '',
   parent: IComment | undefined = undefined,
   children: IComment[] | undefined = undefined,

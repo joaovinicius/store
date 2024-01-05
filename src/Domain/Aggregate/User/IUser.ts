@@ -1,3 +1,4 @@
+import { ITenant } from 'src/Domain/Authentication/Tenant'
 import { IContact } from '../../Entity/Contact/IContact'
 
 export interface IUser {
@@ -7,5 +8,6 @@ export interface IUser {
   contact: IContact,
   createdAt: Date,
   updatedAt: Date,
-  deletedAt?: Date
+  deletedAt?: Date,
+  tenants: ITenant[];
 }

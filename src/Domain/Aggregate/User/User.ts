@@ -1,3 +1,4 @@
+import { ITenant } from 'src/Domain/Authentication/Tenant'
 import { IContact } from '../../Entity/Contact/IContact'
 import { IUser } from './IUser'
 
@@ -9,6 +10,7 @@ export class User implements IUser {
   public createdAt: Date
   public updatedAt: Date
   public deletedAt?: Date
+  public tenants: ITenant[];
 
   constructor (props: IUser) {
     this.id = props.id
@@ -18,5 +20,6 @@ export class User implements IUser {
     this.createdAt = props.createdAt
     this.updatedAt = props.updatedAt
     this.deletedAt = props.deletedAt
+    this.tenants = props.tenants
   }
 }
