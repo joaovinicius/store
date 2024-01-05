@@ -8,7 +8,8 @@ export function AttributeValueFactory(
   thumbnail = '',
   attribute = AttributeFactory(),
   createdAt = now,
-  updatedAt = now
+  updatedAt = now,
+  deletedAt: Date | undefined = undefined 
 ): AttributeValue {
   return new AttributeValue({
     id,
@@ -16,6 +17,7 @@ export function AttributeValueFactory(
     thumbnail,
     attribute,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt,
   })
 }

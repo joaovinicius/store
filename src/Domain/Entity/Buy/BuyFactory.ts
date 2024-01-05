@@ -12,7 +12,8 @@ export function BuyFactory(
   deliveryDate: Date = now,
   supplier: ISupplier = SupplierFactory(),
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined 
 ): Buy {
   return new Buy({
     id,
@@ -23,6 +24,7 @@ export function BuyFactory(
     deliveryDate,
     supplier,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

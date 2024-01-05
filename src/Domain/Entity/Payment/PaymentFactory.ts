@@ -5,12 +5,14 @@ export function PaymentFactory(
   id = '',
   name = '',
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined  
 ): Payment {
   return new Payment({
     id,
     name,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

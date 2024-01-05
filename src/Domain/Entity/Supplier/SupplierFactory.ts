@@ -8,13 +8,15 @@ export function SupplierFactory(
   name = '',
   contact: IContact = ContactFactory(),
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now, 
+  deletedAt: Date | undefined = undefined 
 ): Supplier {
   return new Supplier({
     id,
     name,
     contact,
     createdAt,
-    updatedAt
+    updatedAt, 
+    deletedAt
   })
 }

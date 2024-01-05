@@ -8,7 +8,8 @@ export function ProductInCartFactory(
   product: IProductInStock = ProductInStockFactory(),
   note = '',
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined 
 ): ProductInCart {
   return new ProductInCart({
     id,
@@ -16,6 +17,7 @@ export function ProductInCartFactory(
     product,
     note,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

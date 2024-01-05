@@ -5,12 +5,14 @@ export function AttributeFactory(
   id = '',
   name = '',
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined 
 ): Attribute {
   return new Attribute({
     id,
     name,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt,
   })
 }

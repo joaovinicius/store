@@ -13,7 +13,8 @@ export function CouponFactory(
   isActive = false,
   createdBy: IAdmin = AdminFactory(),
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined 
 ): Coupon {
   return new Coupon({
     id,
@@ -25,6 +26,7 @@ export function CouponFactory(
     isActive,
     createdBy,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

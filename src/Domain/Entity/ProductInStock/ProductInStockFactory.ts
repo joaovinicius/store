@@ -16,7 +16,8 @@ export function ProductInStockFactory(
   quantity = 0,
   buy: IBuy = BuyFactory(),
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined 
 ): ProductInStock {
   return new ProductInStock({
     id,
@@ -28,6 +29,7 @@ export function ProductInStockFactory(
     quantity,
     buy,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

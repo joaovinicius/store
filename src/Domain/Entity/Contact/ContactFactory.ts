@@ -8,7 +8,8 @@ export function ContactFactory(
   phone = '',
   addresses: IAddress[] = [],
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined 
 ): Contact {
   return new Contact({
     id,
@@ -16,6 +17,7 @@ export function ContactFactory(
     phone,
     addresses,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

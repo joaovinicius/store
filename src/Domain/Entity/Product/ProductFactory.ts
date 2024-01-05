@@ -8,7 +8,8 @@ export function ProductFactory(
   brand = '',
   model = '',
   createdAt: Date = now,
-  updatedAt: Date = now
+  updatedAt: Date = now,
+  deletedAt: Date | undefined = undefined 
 ): Product {
   return new Product({
     id,
@@ -17,6 +18,7 @@ export function ProductFactory(
     brand,
     model,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }
