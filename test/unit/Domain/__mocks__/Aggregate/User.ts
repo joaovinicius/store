@@ -10,5 +10,6 @@ export const mock: IUser = new User({
   password: faker.internet.password(),
   contact: ContactMock,
   createdAt: now,
-  updatedAt: now
+  updatedAt: now,
+  tenants: []
 })

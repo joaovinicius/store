@@ -1,15 +1,14 @@
-import { IBilling } from '../../Entity/Billing/IBilling'
 import { BillingFactory } from '../../Entity/Billing/BillingFactory'
 import { Purchase } from './Purchase'
-import { CartFactory, ICart } from '..'
+import { CartFactory } from '../Cart/CartFactory'
 
 export function PurchaseFactory (
   id = '',
-  cart: ICart = CartFactory(),
-  billing: IBilling = BillingFactory(),
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  cart  = CartFactory(),
+  billing  = BillingFactory(),
+  createdAt = new Date(),
+  updatedAt = new Date(),
+  deletedAt = undefined
 ): Purchase {
   return new Purchase({
     id,

@@ -1,4 +1,3 @@
-import { ISupplier } from '../Supplier/ISupplier'
 import { SupplierFactory } from '../Supplier/SupplierFactory'
 import { Buy } from './Buy'
 const now = new Date()
@@ -8,12 +7,12 @@ export function BuyFactory(
   invoice = 0,
   totalPaid = 0,
   costOfFreight = 0,
-  requestDate: Date = now,
-  deliveryDate: Date = now,
-  supplier: ISupplier = SupplierFactory(),
-  createdAt: Date = now,
-  updatedAt: Date = now,
-  deletedAt: Date | undefined = undefined 
+  requestDate = now,
+  deliveryDate = now,
+  supplier = SupplierFactory(),
+  createdAt = now,
+  updatedAt = now,
+  deletedAt = undefined 
 ): Buy {
   return new Buy({
     id,

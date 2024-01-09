@@ -1,6 +1,6 @@
-import { AddressFactory, IAddress } from 'src/Domain/Entity'
+import { AddressFactory  } from 'src/Domain/Entity'
 import { Branch } from './Branch'
-import { AdminFactory, IAdmin } from 'src/Domain/Aggregate'
+import { AdminFactory } from 'src/Domain/Aggregate'
 
 export function BranchFactory (
   id = '',

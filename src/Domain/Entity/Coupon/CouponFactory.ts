@@ -1,5 +1,4 @@
 import { AdminFactory } from '../../Aggregate/Admin/AdminFactory'
-import { IAdmin } from '../../Aggregate/Admin/IAdmin'
 import { Coupon } from './Coupon'
 const now = new Date()
 
@@ -8,13 +7,13 @@ export function CouponFactory(
   code = '',
   discount = 0,
   limit = 0,
-  startDate: Date = now,
-  endDate: Date = now,
+  startDate = now,
+  endDate = now,
   isActive = false,
-  createdBy: IAdmin = AdminFactory(),
-  createdAt: Date = now,
-  updatedAt: Date = now,
-  deletedAt: Date | undefined = undefined 
+  createdBy = AdminFactory(),
+  createdAt = now,
+  updatedAt = now,
+  deletedAt = undefined 
 ): Coupon {
   return new Coupon({
     id,

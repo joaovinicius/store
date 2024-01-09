@@ -9,7 +9,7 @@ export function AttributeValueFactory(
   attribute = AttributeFactory(),
   createdAt = now,
   updatedAt = now,
-  deletedAt: Date | undefined = undefined 
+  deletedAt = undefined 
 ): AttributeValue {
   return new AttributeValue({
     id,

@@ -7,9 +7,9 @@ export function ProductFactory(
   description = '',
   brand = '',
   model = '',
-  createdAt: Date = now,
-  updatedAt: Date = now,
-  deletedAt: Date | undefined = undefined 
+  createdAt = now,
+  updatedAt = now,
+  deletedAt = undefined 
 ): Product {
   return new Product({
     id,

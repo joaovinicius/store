@@ -4,9 +4,9 @@ const now = new Date()
 export function ShippingFactory(
   id = '',
   name = '',
-  createdAt: Date = now,
-  updatedAt: Date = now, 
-  deletedAt: Date | undefined = undefined 
+  createdAt = now,
+  updatedAt = now, 
+  deletedAt = undefined 
 ): Shipping {
   return new Shipping({
     id,

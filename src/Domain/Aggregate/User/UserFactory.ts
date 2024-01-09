@@ -1,6 +1,4 @@
-import { ITenant } from 'src/Domain/Authentication/Tenant'
 import { ContactFactory } from '../../Entity/Contact/ContactFactory'
-import { IContact } from '../../Entity/Contact/IContact'
 import { User } from './User'
 import { TenantFactory } from 'src/Domain/Authentication/Tenant'
 
@@ -10,10 +8,10 @@ export function UserFactory (
   id = '',
   name = '',
   password = '',
-  contact: IContact = ContactFactory(),
-  createdAt: Date = now,
-  updatedAt: Date = now,
-  tenants: ITenant[] = [TenantFactory()]
+  contact = ContactFactory(),
+  createdAt = now,
+  updatedAt = now,
+  tenants = [TenantFactory()]
 ): User {
   return new User({
     id,

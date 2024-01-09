@@ -10,8 +10,8 @@ import {
 const parentFolders = [
   // 'Aggregate/',
   'Entity/',
-  'Authentication/',
-  'ValueObject/'
+  // 'Authentication/',
+  // 'ValueObject/'
 ]
 
 const entityNames: string[] = []
