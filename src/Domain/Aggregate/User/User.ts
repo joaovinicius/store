@@ -1,4 +1,4 @@
-import { ITenant } from 'src/Domain/Authentication/Tenant'
+import { ITenant } from '../../Authentication/Tenant'
 import { IContact } from '../../Entity/Contact/IContact'
 import { IUser } from './IUser'
 
@@ -6,7 +6,7 @@ export class User implements IUser {
   public id: string
   public name: string
   public password: string
-  public contact: IContact
+  public contact?: IContact
   public createdAt: Date
   public updatedAt: Date
   public deletedAt?: Date

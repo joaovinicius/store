@@ -1,7 +1,7 @@
 import faker from 'faker'
 import { IBuy } from '../../../../../src/Domain/Entity/Buy/IBuy'
 import { Buy } from '../../../../../src/Domain/Entity/Buy/Buy'
-import { SupplierFactory } from '../../../../../src/Domain/Entity/Supplier/SupplierFactory'
+import { mock as SupplierMock } from './Supplier'
 const now = new Date()
 
 export const mock: IBuy = new Buy({
@@ -11,7 +11,7 @@ export const mock: IBuy = new Buy({
   costOfFreight: 0,
   requestDate: now,
   deliveryDate: now,
-  supplier: SupplierFactory(),
+  supplier: SupplierMock,
   createdAt: now,
   updatedAt: now
 })

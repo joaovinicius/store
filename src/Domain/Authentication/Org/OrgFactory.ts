@@ -1,6 +1,6 @@
-import { AddressFactory } from 'src/Domain/Entity';
+import { AddressFactory } from 'src/Domain/Entity/Address/AddressFactory';
 import { Org } from './Org';
-import { AdminFactory } from 'src/Domain/Aggregate';
+import { AdminFactory } from 'src/Domain/Aggregate/Admin/AdminFactory';
 
 export function OrgFactory (
   id = '',

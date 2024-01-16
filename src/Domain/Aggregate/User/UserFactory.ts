@@ -1,6 +1,4 @@
-import { ContactFactory } from '../../Entity/Contact/ContactFactory'
 import { User } from './User'
-import { TenantFactory } from 'src/Domain/Authentication/Tenant'
 
 const now = new Date()
 
@@ -8,10 +6,11 @@ export function UserFactory (
   id = '',
   name = '',
   password = '',
-  contact = ContactFactory(),
+  contact = undefined,
   createdAt = now,
   updatedAt = now,
-  tenants = [TenantFactory()]
+  tenants = [],
+  deletedAt= undefined
 ): User {
   return new User({
     id,
@@ -20,6 +19,7 @@ export function UserFactory (
     contact,
     createdAt,
     updatedAt,
-    tenants
+    tenants,
+    deletedAt
   })
 }

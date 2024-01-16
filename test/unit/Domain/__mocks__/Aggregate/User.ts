@@ -5,7 +5,7 @@ import { mock as ContactMock } from '../Entity/Contact'
 const now = new Date()
 
 export const mock: IUser = new User({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   password: faker.internet.password(),
   contact: ContactMock,

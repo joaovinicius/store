@@ -1,12 +1,10 @@
-import { AddressFactory  } from 'src/Domain/Entity'
 import { Branch } from './Branch'
-import { AdminFactory } from 'src/Domain/Aggregate'
 
 export function BranchFactory (
   id = '',
   name = '',
-  address = AddressFactory(),
-  admin = AdminFactory(),
+  address = undefined,
+  admin = undefined,
   ein = '',
   companyName = ''
 ): Branch {

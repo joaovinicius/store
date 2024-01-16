@@ -5,8 +5,8 @@ import { IAdmin } from 'src/Domain/Aggregate'
 export class Branch implements IBranch {
  public id: string
  public name: string
- public address: IAddress
- public admin: IAdmin
+ public address?: IAddress
+ public admin?: IAdmin
  public ein: string
  public companyName: string
 

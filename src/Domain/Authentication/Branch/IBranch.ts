@@ -4,8 +4,8 @@ import { IAddress } from "src/Domain/Entity"
 export interface IBranch {
   id: string,
   name: string,
-  address: IAddress,
-  admin: IAdmin,
+  address?: IAddress,
+  admin?: IAdmin,
   ein: string,
   companyName: string
 }
