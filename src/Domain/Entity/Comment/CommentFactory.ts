@@ -1,4 +1,3 @@
-import { IUser } from '../../Aggregate/User/IUser'
 import { UserFactory } from '../../Aggregate/User/UserFactory'
 import { Comment } from './Comment'
 
@@ -7,17 +6,23 @@ const now = new Date()
 export function CommentFactory(
   id = '',
   name = '',
-  from: IUser = UserFactory(),
+  from = UserFactory(),
   message = '',
-  createdAt: Date = now,
-  updatedAt: Date = now
+  parent = undefined,
+  children = undefined,
+  createdAt = now,
+  updatedAt = now,
+  deletedAt = undefined 
 ): Comment {
   return new Comment({
     id,
     name,
     from,
     message,
+    parent,
+    children,
     createdAt,
-    updatedAt
+    updatedAt, 
+    deletedAt
   })
 }

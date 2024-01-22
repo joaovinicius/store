@@ -1,4 +1,3 @@
-import { IContact } from '../Contact/IContact'
 import { ContactFactory } from '../Contact/ContactFactory'
 import { Supplier } from './Supplier'
 const now = new Date()
@@ -6,15 +5,17 @@ const now = new Date()
 export function SupplierFactory(
   id = '',
   name = '',
-  contact: IContact = ContactFactory(),
-  createdAt: Date = now,
-  updatedAt: Date = now
+  contact = ContactFactory(),
+  createdAt = now,
+  updatedAt = now, 
+  deletedAt = undefined 
 ): Supplier {
   return new Supplier({
     id,
     name,
     contact,
     createdAt,
-    updatedAt
+    updatedAt, 
+    deletedAt
   })
 }

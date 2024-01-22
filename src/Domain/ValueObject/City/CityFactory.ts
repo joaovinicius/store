@@ -4,10 +4,10 @@ import { City } from './City'
 export function CityFactory(
   id = '',
   name = '',
-  state: IState = StateFactory(),
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  state = StateFactory(),
+  createdAt = new Date(),
+  updatedAt = new Date(),
+  deletedAt = undefined
 ): City {
   return new City({
     id,

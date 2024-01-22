@@ -12,9 +12,9 @@ export function AddressFactory(
   cityName = '',
   stateName = '',
   stateAbbr = '',
-  createdAt: Date = now,
-  updatedAt: Date = now,
-  deletedAt: Date | undefined = undefined
+  createdAt = now,
+  updatedAt = now,
+  deletedAt = undefined
 ): Address {
   return new Address({
     id,

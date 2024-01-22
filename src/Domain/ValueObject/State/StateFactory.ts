@@ -4,9 +4,9 @@ export function StateFactory (
   id = '',
   name = '',
   abbr = '',
-  createdAt: Date = new Date(),
-  updatedAt: Date = new Date(),
-  deletedAt: Date | undefined = undefined
+  createdAt = new Date(),
+  updatedAt = new Date(),
+  deletedAt = undefined
 ): State {
   return new State({
     id,

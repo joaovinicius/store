@@ -8,7 +8,7 @@ import {
 } from '../../../src/Support/Helper/TsMorph'
 
 const parentFolders = [
-  // 'Aggregate/',
+  'Aggregate/',
   'Entity/',
   'Authentication/',
   'ValueObject/'

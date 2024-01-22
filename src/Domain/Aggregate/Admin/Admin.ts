@@ -1,6 +1,7 @@
 import { User } from '../User/User'
 import { ModulePermission } from '../../Authentication/ModulePermission/ModulePermission'
 import { IAdmin } from './IAdmin'
+import { ITenant } from '../../Authentication/Tenant/ITenant'
 
 export class Admin implements IAdmin {
   public id: string
@@ -9,6 +10,7 @@ export class Admin implements IAdmin {
   public createdAt: Date
   public updatedAt: Date
   public deletedAt?: Date
+  public tenants: ITenant[]
 
   constructor (props: IAdmin) {
     this.id = props.id
@@ -17,5 +19,6 @@ export class Admin implements IAdmin {
     this.createdAt = props.createdAt
     this.updatedAt = props.updatedAt
     this.deletedAt = props.deletedAt
+    this.tenants = props.tenants
   }
 }

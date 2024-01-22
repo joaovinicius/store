@@ -4,13 +4,15 @@ const now = new Date()
 export function PaymentFactory(
   id = '',
   name = '',
-  createdAt: Date = now,
-  updatedAt: Date = now
+  createdAt = now,
+  updatedAt = now,
+  deletedAt = undefined  
 ): Payment {
   return new Payment({
     id,
     name,
     createdAt,
-    updatedAt
+    updatedAt,
+    deletedAt
   })
 }

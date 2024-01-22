@@ -6,7 +6,7 @@ import { mock as BillingMock } from '../Entity/Billing'
 const now = new Date()
 
 export const mock: IPurchase = new Purchase({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   cart: CartMock,
   billing: BillingMock,
   createdAt: now,

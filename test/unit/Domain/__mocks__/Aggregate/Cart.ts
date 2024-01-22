@@ -8,7 +8,7 @@ import { mock as PaymentMock } from '../Entity/Payment'
 const now = new Date()
 
 export const mock: ICart = new Cart({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   products: [ProductInCartMock],
   coupon: CouponMock,
   shipping: ShippingMock,

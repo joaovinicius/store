@@ -1,7 +1,7 @@
 import faker from 'faker'
 import { ICoupon } from '../../../../../src/Domain/Entity/Coupon/ICoupon'
 import { Coupon } from '../../../../../src/Domain/Entity/Coupon/Coupon'
-import { AdminFactory } from '../../../../../src/Domain/Aggregate'
+import { mock as Admin} from '../Aggregate/Admin'
 const now = new Date()
 
 export const mock: ICoupon = new Coupon({
@@ -12,7 +12,7 @@ export const mock: ICoupon = new Coupon({
   startDate: now,
   endDate: now,
   isActive: false,
-  createdBy: AdminFactory(),
+  createdBy: Admin,
   createdAt: now,
   updatedAt: now,
   deletedAt: now
