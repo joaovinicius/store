@@ -1,6 +1,7 @@
 import { IRoute } from './IRoute'
 import AuthController from '../Controller/AuthenticationController'
 import PublicMiddleware from '../Middleware/PublicMiddleware'
+import UserMiddleware from '../Middleware/UserMiddleware'
 
 const PREFIX = 'authentication'
 const authController = new AuthController()
@@ -8,14 +9,20 @@ const authController = new AuthController()
 const routes: IRoute[] = [
   {
     path: `${PREFIX}/sign-in`,
-    method: 'get',
+    method: 'post',
     middeware: PublicMiddleware,
     controller: authController.requestSignIn
   },
   {
+    path: `${PREFIX}/sign-up`,
+    method: 'post',
+    middeware: PublicMiddleware,
+    controller: authController.requestSignUp
+  },
+  {
     path: `${PREFIX}/sign-in-with-social`,
     method: 'get',
-    middeware: PublicMiddleware,
+    middeware: UserMiddleware,
     controller: authController.requestSignInWithSocial
   },
   {
