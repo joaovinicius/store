@@ -5,6 +5,10 @@ export default function PublicMiddleware(
   res: Response,
   next: NextFunction
 ) {
-  console.log('Request:', req.method, req.url);
+  const token = req.headers['authorization']
+  
+  if (token) {
+    return res.status(401).json({ mensagem : 'Usuário já logado'})
+  }
   next()
 }
