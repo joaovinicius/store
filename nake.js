@@ -1,8 +1,13 @@
 'use strict'
 const { argv } = require('node:process')
 const { exec } = require('child_process')
-const contexts = ['Authentication', 'Store', 'Admin']
-const flagOptions = contexts.map(item => `--${item.toLowerCase()}`)
+const contexts = {
+  '--authentication' : 'Authentication',
+  '--store' :  'Store', 
+  '--admin' :  'Admin'
+} 
+
+const flagOptions = Object.keys(contexts)
 let commandArgs = []
 let flags = []
 let paramName = ''
@@ -71,9 +76,9 @@ const commands = {
         console.log(` - ${key}: ${value.description}`);
       }
       console.log('\n Flag options:\n')
-      contexts.forEach(item => {
-        console.log(` --${item.toLowerCase()}`);
-      })
+      for (const [flag,context] of Object.entries(contexts)){
+        console.log(` - ${context} ${flag}`);
+      }
       console.log('\nDocumentation can be found at ./nake.js\n')
     }
   },
@@ -109,10 +114,22 @@ const commands = {
     description: 'Run all migrations (default) or especify the contexts with a flag option',
     command: () => {
       const contextToRun = (flags.length)
-        ? contexts.filter(item => flagOptions.includes(`--${item.toLowerCase()}`))
-        : contexts
+        ? flags
+        : flagOptions
 
-      commandArgs = contextToRun.map(item => knexCommand('migrate:latest', item))
+      commandArgs = contextToRun.map(item => knexCommand('migrate:latest', contexts[item]))
+
+      executeFirst()
+    }
+  },
+  'seed:make': {
+    description: 'Create a seed flag option is required',
+    command: () => {
+      const contextToRun = (flags.length)
+        ? flags
+        : flagOptions
+      commandArgs = contextToRun
+        .map(item => knexCommand('seed:make', contexts[item], paramName.join('')))
 
       executeFirst()
     }
@@ -121,11 +138,10 @@ const commands = {
     description: 'Create a migration flag option is required',
     command: () => {
       const contextToRun = (flags.length)
-        ? contexts.filter(item => flagOptions.includes(`--${item.toLowerCase()}`))
-        : contexts
-
+        ? flags
+        : flagOptions
       commandArgs = contextToRun
-        .map(item => knexCommand('migrate:make', item, paramName.join('')))
+        .map(item => knexCommand('migrate:make', contexts[item], paramName.join('')))
 
       executeFirst()
     }
@@ -134,10 +150,10 @@ const commands = {
     description: 'Run all migratios or context especified by flag option',
     command: () => {
       const contextToRun = (flags.length)
-        ? contexts.filter(item => flagOptions.includes(`--${item.toLowerCase()}`))
-        : contexts
+        ? flags
+        : flagOptions
       commandArgs = contextToRun
-        .map(item => knexCommand('migrate:rollback', item, paramName.join('')))
+        .map(item => knexCommand('migrate:rollback', contexts[item], paramName.join('')))
 
       executeFirst()
     }
@@ -146,10 +162,10 @@ const commands = {
     description: 'Run all migratios or context especified by flag option',
     command: () => {
       const contextToRun = (flags.length)
-        ? contexts.filter(item => flagOptions.includes(`--${item.toLowerCase()}`))
-        : contexts
+        ? flags
+        : flagOptions
       commandArgs = contextToRun
-        .map(item => knexCommand('migrate:up', item, paramName.join('')))
+        .map(item => knexCommand('migrate:up', contexts[item], paramName.join('')))
 
       executeFirst()
     }
@@ -158,10 +174,10 @@ const commands = {
     description: 'Run all migratios or context especified by flag option',
     command: () => {
       const contextToRun = (flags.length)
-        ? contexts.filter(item => flagOptions.includes(`--${item.toLowerCase()}`))
-        : contexts
+        ? flags
+        : flagOptions
       commandArgs = contextToRun
-        .map(item => knexCommand('migrate:down', item, paramName.join('')))
+        .map(item => knexCommand('migrate:down', contexts[item], paramName.join('')))
 
       executeFirst()
     }
@@ -170,9 +186,9 @@ const commands = {
     description: 'Run all migratios or context especified by flag option',
     command: () => {
       const contextToRun = (flags.length)
-        ? contexts.filter(item => flagOptions.includes(`--${item.toLowerCase()}`))
-        : contexts
-      commandArgs = contextToRun.map(item => knexCommand('migrate:list', item))
+        ? flags
+        : flagOptions
+      commandArgs = contextToRun.map(item => knexCommand('migrate:list', contexts[item]))
 
       executeFirst()
     }
@@ -192,6 +208,7 @@ const commands = {
 }
 
 const commandOptions = Object.keys(commands)
+
 commandArgs = argv.filter(item => commandOptions.includes(item))
 flags = argv.filter(item => flagOptions.includes(item))
 paramName = argv
