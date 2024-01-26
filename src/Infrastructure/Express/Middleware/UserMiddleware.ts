@@ -15,7 +15,9 @@ export default function UserMiddleware(
       const decoded = jwt.verify(token, secret);
       res.locals.user = decoded
       next()
+      return
     }
+    
     ErrorHandler(res,400,'errors.not_authorized')
   } catch (error) {
     ErrorHandler(res,401,'errors.not_authorized')
