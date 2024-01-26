@@ -3,7 +3,7 @@ import { Supplier } from './Supplier'
 const now = new Date()
 
 export function SupplierFactory(
-  id = '',
+  id = undefined,
   name = '',
   contact = ContactFactory(),
   createdAt = now,

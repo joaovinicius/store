@@ -4,7 +4,7 @@ import { IBuy } from '../Buy/IBuy'
 import { IProductInStock } from './IProductInStock'
 
 export class ProductInStock implements IProductInStock {
-  public id: string
+  public id?: number
   public barcode: string
   public product: IProduct
   public attributeValues: IAttributeValue[]

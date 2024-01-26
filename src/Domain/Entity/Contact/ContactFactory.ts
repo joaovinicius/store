@@ -2,7 +2,7 @@ import { Contact } from './Contact'
 const now = new Date()
 
 export function ContactFactory(
-  id = '',
+  id = undefined,
   email = '',
   phone = '',
   addresses = [],

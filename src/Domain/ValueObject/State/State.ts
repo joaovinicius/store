@@ -1,7 +1,7 @@
 import { IState } from './IState'
 
 export class State implements IState {
-  public id: string
+  public id?: number
   public name: string
   public abbr: string
   public createdAt: Date

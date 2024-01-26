@@ -2,7 +2,7 @@ import { IAdmin } from "src/Domain/Aggregate"
 import { IAddress } from "src/Domain/Entity"
 
 export interface IBranch {
-  id: string,
+  id?: number,
   name: string,
   address?: IAddress,
   admin?: IAdmin,

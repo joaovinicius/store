@@ -3,8 +3,10 @@ import { IContact } from '../../Entity/Contact/IContact'
 import { IUser } from './IUser'
 
 export class User implements IUser {
-  public id: string
-  public name: string
+  public id?: number
+  public name?: string
+  public email: string
+  public username?: string
   public password: string
   public contact?: IContact
   public createdAt: Date
@@ -15,6 +17,8 @@ export class User implements IUser {
   constructor (props: IUser) {
     this.id = props.id
     this.name = props.name
+    this.email = props.email
+    this.username = props.username
     this.password = props.password
     this.contact = props.contact
     this.createdAt = props.createdAt

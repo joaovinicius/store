@@ -2,7 +2,7 @@ import { IState, StateFactory } from '../State'
 import { City } from './City'
 
 export function CityFactory(
-  id = '',
+  id = undefined,
   name = '',
   state = StateFactory(),
   createdAt = new Date(),

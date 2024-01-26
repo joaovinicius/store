@@ -6,7 +6,6 @@ import {mock as BuyMock} from './Buy'
 const now = new Date()
 const price = faker.datatype.number(100)
 export const mock: IProductInStock = new ProductInStock({
-  id: faker.datatype.uuid(),
 
   barcode: faker.datatype.string(),
   product: ProductMock,

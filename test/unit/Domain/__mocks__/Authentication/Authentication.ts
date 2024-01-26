@@ -3,5 +3,6 @@ import { IAuthentication } from '../../../../../src/Domain/Authentication/Authen
 import { Authentication } from '../../../../../src/Domain/Authentication/Authentication'
 
 export const mock: IAuthentication = new Authentication({
-  login: faker.internet.email()
+  tenantId: faker.datatype.number(),
+  email: faker.internet.email()
 })

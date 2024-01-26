@@ -3,7 +3,7 @@ import { IBranch } from './IBranch'
 import { IAdmin } from 'src/Domain/Aggregate'
 
 export class Branch implements IBranch {
- public id: string
+ public id?: number
  public name: string
  public address?: IAddress
  public admin?: IAdmin

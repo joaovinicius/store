@@ -1,7 +1,7 @@
 import { IAttribute } from '../Attribute/IAttribute'
 
 export interface IAttributeValue {
-  id: string
+  id?: number
   name: string
   thumbnail: string
   attribute?: IAttribute

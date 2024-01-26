@@ -1,12 +1,14 @@
 import { Authentication } from './Authentication'
 
 export function AuthenticationFactory (
-  login = '',
+  tenantId: 0,
+  email: '',
   password = '',
   passwordConfirmation = ''
 ): Authentication {
   return new Authentication({
-    login,
+    tenantId,
+    email,
     password,
     passwordConfirmation
   })

@@ -1,5 +1,5 @@
 export interface IState {
-  id: string,
+  id?: number,
   name: string,
   abbr: string,
   createdAt: Date,

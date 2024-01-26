@@ -5,7 +5,6 @@ import { mock as UserMock } from '../Aggregate/User'
 const now = new Date()
 
 export const mock: IComment = new Comment({
-  id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   from: UserMock,
   message: faker.lorem.sentence(),

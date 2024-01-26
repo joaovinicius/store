@@ -3,7 +3,7 @@ import { IAttributeValue } from '../AttributeValue/IAttributeValue'
 import { IBuy } from '../Buy/IBuy'
 
 export interface IProductInStock {
-  id: string,
+  id?: number,
   barcode: string,
   product: IProduct,
   attributeValues: IAttributeValue[],

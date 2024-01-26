@@ -2,7 +2,7 @@ import { Product } from './Product'
 const now = new Date()
 
 export function ProductFactory(
-  id = '',
+  id = undefined,
   name = '',
   description = '',
   brand = '',

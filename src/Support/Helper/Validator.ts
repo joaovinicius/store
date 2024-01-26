@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import validator from 'validator';
 
+type opt = { [key:string]: object }
 export interface IRule {
-  [key:string]: string[]
+  [key:string]: (string | opt)[]
+
 }
 
 export default function Validate(rules: IRule, value: any): void {
@@ -11,25 +13,32 @@ export default function Validate(rules: IRule, value: any): void {
   }
   const verification: any = {}
   for (const [key, validators] of Object.entries(rules)) {
-    if (!value[key] && validators.includes('required')) {
-      verification[key] = validators
-    } else {
-      const check = validators.map(method => {
-        if (method === 'isNotEmpty' ) {
-          if (!value[key] || validator.isEmpty(value[key])) {
-            return method
-          }
-        }
-
+    const check = validators.map(method => {
+      if (typeof method === 'string'){
         // eslint-disable-next-line
         // @ts-ignore
-        if (!value[key] || !validator[method](value[key])) {
+        const isValid = validator[method](typeof value[key] === 'string' ? value[key] :  String(value[key]))
+        if (!value[key] || !isValid) {
           return method
         }
-      })
-      if (check.length) {
-        verification[key] = check
       }
+      if (typeof method === 'object'){
+        const [methodName] = Object.keys(method)
+        // eslint-disable-next-line
+        // @ts-ignore
+        const isValid = validator[methodName](
+          typeof value[key] === 'string' ? value[key] :  String(value[key]),
+          method[methodName]
+
+        )
+        if (!value[key] || !isValid) {
+          return method
+        }
+      }
+      
+    }).filter(item => !!item)
+    if (check.length) {
+      verification[key] = check
     }
   }
   if (Object.keys(verification).length) {

@@ -3,7 +3,7 @@ import { Purchase } from './Purchase'
 import { CartFactory } from '../Cart/CartFactory'
 
 export function PurchaseFactory (
-  id = '',
+  id = undefined,
   cart  = CartFactory(),
   billing  = BillingFactory(),
   createdAt = new Date(),

@@ -1,7 +1,7 @@
 import { IBilling } from './IBilling'
 
 export class Billing implements IBilling {
-  public id: string
+  public id?: number
   public name: string
   public createdAt: Date
   public updatedAt: Date

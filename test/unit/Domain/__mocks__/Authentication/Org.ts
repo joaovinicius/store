@@ -4,7 +4,7 @@ import { mock as Admin } from '../Aggregate/Admin';
 import { mock as Address } from '../Entity/Address';
 
 export const mock: IOrg = new Org({
-    id: faker.lorem.sentence(),
+    
     name: faker.name.firstName(),
     address: Address,
     admin: Admin,

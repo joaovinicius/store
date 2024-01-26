@@ -1,7 +1,7 @@
 import { IProductInStock } from '../ProductInStock/IProductInStock'
 
 export interface IProductInCart {
-  id: string,
+  id?: number,
   quantity: number,
   product: IProductInStock,
   note: string,

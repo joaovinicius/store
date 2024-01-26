@@ -1,0 +1,20 @@
+import { Knex } from "knex";
+
+export async function seed(knex: Knex): Promise<void> {
+    // Deletes ALL existing entries
+    await knex("user").del();
+
+    // Inserts seed entries
+    await knex("user").insert([
+        { 
+            id: "2",
+            name: "Naiara",
+            email: "naiara@naiara",
+            username: "rnaiara920" ,
+            password: "aabbcc" ,
+            contact_id: "1" ,
+            tenant_id: "1" ,
+        },
+
+    ]);
+}

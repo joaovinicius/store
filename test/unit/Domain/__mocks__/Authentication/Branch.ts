@@ -6,7 +6,7 @@ import { mock as Address } from '../Entity/Address';
 
 
 export const mock: IBranch = new Branch({
-    id: faker.datatype.uuid(),
+    
     name: faker.name.firstName(),
     address: Address,
     admin: Admin,

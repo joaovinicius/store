@@ -3,7 +3,7 @@ import { ProductInCart } from './ProductInCart'
 const now = new Date()
 
 export function ProductInCartFactory(
-  id = '',
+  id = undefined,
   quantity = 0,
   product = ProductInStockFactory(),
   note = '',

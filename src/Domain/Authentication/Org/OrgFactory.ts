@@ -3,7 +3,7 @@ import { Org } from './Org';
 import { AdminFactory } from 'src/Domain/Aggregate/Admin/AdminFactory';
 
 export function OrgFactory (
-  id = '',
+  id = undefined,
   name = '',
   address = AddressFactory(),
   admin = AdminFactory() ,

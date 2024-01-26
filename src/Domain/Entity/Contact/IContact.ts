@@ -1,7 +1,7 @@
 import { IAddress } from '../Address/IAddress'
 
 export interface IContact {
-  id: string,
+  id?: number,
   email: string,
   phone: string,
   addresses: IAddress[],

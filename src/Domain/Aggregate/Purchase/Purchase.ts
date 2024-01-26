@@ -3,7 +3,7 @@ import { IPurchase } from './IPurchase'
 import { ICart } from '../Cart/ICart'
 
 export class Purchase  implements IPurchase {
-  public id: string
+  public id?: number
   public cart: ICart
   public billing: IBilling
   public createdAt: Date

@@ -5,7 +5,6 @@ import { mock as Admin} from '../Aggregate/Admin'
 const now = new Date()
 
 export const mock: ICoupon = new Coupon({
-  id: faker.datatype.uuid(),
   code: faker.datatype.uuid(),
   discount: 0,
   limit: 0,

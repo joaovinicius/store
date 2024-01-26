@@ -7,6 +7,7 @@ export default function ValidationMiddleware(DataTransferObject: any) {
       res.locals.instance = new DataTransferObject(req.body)
       next();
     } catch (error) {
+      console.log(error)
       res.status(422).send(error);
     }
   };

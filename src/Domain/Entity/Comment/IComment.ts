@@ -1,7 +1,7 @@
 import { IUser } from '../../Aggregate/User/IUser'
 
 export interface IComment {
-  id: string
+  id?: number
   name: string
   from: IUser
   message: string

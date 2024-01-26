@@ -1,5 +1,5 @@
 export interface IPayment {
-  id: string,
+  id?: number,
   name: string,
   createdAt: Date,
   updatedAt: Date,

@@ -2,7 +2,7 @@ import { Billing } from './Billing'
 const now = new Date()
 
 export function BillingFactory(
-  id = '',
+  id = undefined,
   name = '',
   createdAt= now,
   updatedAt= now,

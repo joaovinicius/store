@@ -4,7 +4,7 @@ import { Comment } from './Comment'
 const now = new Date()
 
 export function CommentFactory(
-  id = '',
+  id = undefined,
   name = '',
   from = UserFactory(),
   message = '',

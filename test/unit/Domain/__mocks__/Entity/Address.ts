@@ -4,7 +4,6 @@ import { Address } from '../../../../../src/Domain/Entity/Address/Address'
 const now = new Date()
 
 export const mock: IAddress = new Address({
-  id: faker.datatype.uuid(),
   cep: faker.address.zipCode(),
   neighborhood: faker.address.streetName(),
   street: faker.address.streetName(),

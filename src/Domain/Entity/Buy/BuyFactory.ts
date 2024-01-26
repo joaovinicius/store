@@ -3,7 +3,7 @@ import { Buy } from './Buy'
 const now = new Date()
 
 export function BuyFactory(
-  id = '',
+  id = undefined,
   invoice = 0,
   totalPaid = 0,
   costOfFreight = 0,

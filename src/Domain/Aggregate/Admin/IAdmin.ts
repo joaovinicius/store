@@ -3,7 +3,7 @@ import { IModulePermission } from '../../Authentication/ModulePermission/IModule
 import { IUser } from '../User/IUser'
 
 export interface IAdmin {
-  id: string,
+  id?: number,
   user: IUser,
   modulePermissions: IModulePermission[],
   createdAt: Date,

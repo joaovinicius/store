@@ -4,7 +4,7 @@ import { IProductInCart } from '../../Entity/ProductInCart/IProductInCart'
 import { IShipping } from '../../Entity/Shipping/IShipping'
 
 export interface ICart {
-  id: string,
+  id?: number,
   products: IProductInCart[],
   coupon?: ICoupon,
   shipping: IShipping,

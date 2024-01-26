@@ -2,7 +2,7 @@ import { Shipping } from './Shipping'
 const now = new Date()
 
 export function ShippingFactory(
-  id = '',
+  id = undefined,
   name = '',
   createdAt = now,
   updatedAt = now, 

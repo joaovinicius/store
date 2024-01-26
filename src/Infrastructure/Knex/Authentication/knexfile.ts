@@ -1,4 +1,5 @@
-import type { Knex } from "knex";
+import knex, { Knex } from "knex";
+import { IUser } from "src/Domain";
 
 const CLIENT = "postgresql";
 const MIGRATION_TABLE_NAME = "authentication_migrations";
@@ -16,7 +17,10 @@ const config: { [key: string]: Knex.Config } = {
     },
     migrations: {
       tableName: MIGRATION_TABLE_NAME
-    }
+    },
+    seeds: {
+      directory: './seeds'
+  }
   },
   staging: {
     client: CLIENT,
@@ -50,4 +54,6 @@ const config: { [key: string]: Knex.Config } = {
   }
 };
 
-module.exports = config;
+export default config
+
+export const db = knex(config.development)

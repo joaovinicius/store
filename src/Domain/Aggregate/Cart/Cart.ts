@@ -5,7 +5,7 @@ import { IShipping } from '../../Entity/Shipping/IShipping'
 import { ICart } from './ICart'
 
 export class Cart implements ICart {
-  public id: string
+  public id?: number
   public products: IProductInCart[]
   public coupon?: ICoupon
   public shipping: IShipping

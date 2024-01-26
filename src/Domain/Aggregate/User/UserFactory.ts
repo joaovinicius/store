@@ -3,8 +3,10 @@ import { User } from './User'
 const now = new Date()
 
 export function UserFactory (
-  id = '',
-  name = '',
+  id = undefined,
+  name = undefined,
+  email = '',
+  username = undefined,
   password = '',
   contact = undefined,
   createdAt = now,
@@ -15,6 +17,8 @@ export function UserFactory (
   return new User({
     id,
     name,
+    email,
+    username,
     password,
     contact,
     createdAt,

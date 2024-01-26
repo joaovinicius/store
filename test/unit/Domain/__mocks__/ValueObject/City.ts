@@ -5,7 +5,6 @@ import { mock as StateMock } from './State'
 const now = new Date()
 
 export const mock: ICity = new City({
-  id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   state: StateMock,
   createdAt: now,

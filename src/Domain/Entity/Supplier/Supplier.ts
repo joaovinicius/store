@@ -2,7 +2,7 @@ import { IContact } from '../Contact/IContact'
 import { ISupplier } from './ISupplier'
 
 export class Supplier implements ISupplier {
-  public id: string
+  public id?: number
   public name: string
   public contact: IContact
   public createdAt: Date
