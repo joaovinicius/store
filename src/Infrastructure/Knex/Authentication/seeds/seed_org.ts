@@ -6,12 +6,14 @@ export async function seed(knex: Knex): Promise<void> {
 
     // Inserts seed entries
     await knex("org").insert([
-        { id: "1", 
-            name: "Org", 
-            address_id:"1",
+        { 
+            id: "1", 
+            name: "Naiara ltda",
+            adress_id: "1",
             admin_id: "1",
-            ein: "00000000",
-            company_name: "Naiara"
-          },
+            ein: "000.000/0001-54",
+            company_name: "Naiara serviços"
+        },
+
     ]);
 }
