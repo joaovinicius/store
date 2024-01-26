@@ -8,7 +8,7 @@ export const mock: IUser = new User({
   id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   email: faker.internet.email(),
-  userName: faker.name.findName(),
+  username: faker.name.findName(),
   password: faker.internet.password(),
   contact: ContactMock,
   createdAt: now,

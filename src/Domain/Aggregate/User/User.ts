@@ -4,21 +4,21 @@ import { IUser } from './IUser'
 
 export class User implements IUser {
   public id: string
-  public name: string
+  public name?: string
   public email: string
-  public userName: string
+  public username?: string
   public password: string
   public contact?: IContact
   public createdAt: Date
   public updatedAt: Date
   public deletedAt?: Date
-  public tenants?: ITenant[];
+  public tenants: ITenant[];
 
   constructor (props: IUser) {
     this.id = props.id
     this.name = props.name
     this.email = props.email
-    this.userName = props.userName
+    this.username = props.username
     this.password = props.password
     this.contact = props.contact
     this.createdAt = props.createdAt

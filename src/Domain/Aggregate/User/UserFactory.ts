@@ -4,21 +4,21 @@ const now = new Date()
 
 export function UserFactory (
   id = '',
-  name = '',
+  name = undefined,
   email = '',
-  userName = '',
+  username = undefined,
   password = '',
   contact = undefined,
   createdAt = now,
   updatedAt = now,
-  tenants = undefined,
+  tenants = [],
   deletedAt= undefined
 ): User {
   return new User({
     id,
     name,
     email,
-    userName,
+    username,
     password,
     contact,
     createdAt,
