@@ -4,7 +4,7 @@ import { IAdmin } from './IAdmin'
 import { ITenant } from '../../Authentication/Tenant/ITenant'
 
 export class Admin implements IAdmin {
-  public id: string
+  public id?: number
   public user: User
   public modulePermissions: ModulePermission[]
   public createdAt: Date

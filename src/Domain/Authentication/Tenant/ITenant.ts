@@ -2,7 +2,7 @@ import { IBranch } from "../Branch"
 import { IOrg } from "../Org"
 
 export interface ITenant {
-  id: string,
+  id?: number,
   hostname: string,
   dbname: string,
   org: IOrg,

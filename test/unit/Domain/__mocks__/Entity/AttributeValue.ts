@@ -5,7 +5,6 @@ import { mock as AttributeMock } from './Attribute'
 const now = new Date()
 
 export const mock: IAttributeValue = new AttributeValue({
-  id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   thumbnail: faker.image.imageUrl(),
   attribute: AttributeMock,

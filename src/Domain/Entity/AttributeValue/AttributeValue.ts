@@ -2,7 +2,7 @@ import { IAttribute } from '../Attribute/IAttribute'
 import { IAttributeValue } from './IAttributeValue'
 
 export class AttributeValue implements IAttributeValue {
-  public id: string
+  public id?: number
   public name: string
   public thumbnail: string
   public attribute?: IAttribute

@@ -1,8 +1,8 @@
 import { Request, Response } from 'express'
 import jwt from 'jsonwebtoken';
-import { db } from '../../Knex/Authentication/knexfile'
+import { db } from '../../../Knex/Authentication/knexfile'
 import bcrypt from 'bcrypt'
-import ErrorHandler from '../Handlers/ResponseErrorHandler';
+import ErrorHandler from '../../Handlers/ResponseErrorHandler';
 
 const secret = process.env.SECRET_KEY ?? 'secret'
 
@@ -17,8 +17,8 @@ export default class AuthController {
 
   async requestSignIn(req: Request, res: Response): Promise<void> {
     try {
-      const { email, password, tenantId } = req.body;
-
+      const { email, password, tenantId } = res.locals.instance;
+console.log(res.locals.instance)
       const usuarioExistente = await db('user')
         .where('email', '=', email)
         .andWhere('tenant_id', '=', tenantId)
@@ -28,6 +28,7 @@ export default class AuthController {
         await bcrypt.compare(password, usuarioExistente.password, (err, same) => {
           if (err || !same) {
             ErrorHandler(res,400,'errors.passwords_do_not_match')
+            return
           }
           if (same) {
             const token = jwt.sign({ id:usuarioExistente.id, email, tenantId}, secret, { expiresIn: '1d' });
@@ -52,6 +53,7 @@ export default class AuthController {
 
       if (password !== passwordConfirmation) {
         ErrorHandler(res,400,'errors.passwords_do_not_match')
+        return
       }
       const usuarioExistente = await db('user')
         .where('email', '=', email)
@@ -63,6 +65,7 @@ export default class AuthController {
         await bcrypt.hash(password, 10, async  (err, hash) => {
           if (err) {
             ErrorHandler(res,400,'errors.passwords_do_not_match')
+            return
           }
           await db('user')
             .returning('id')
@@ -88,7 +91,7 @@ export default class AuthController {
   async requestSignInWithSocial(req: Request, res: Response): Promise<void> {
 
     // const user = await db('users').where('id', '=', 'aaa');
-    console.log(res.locals)
+    // console.log(res.locals)
     res.send('Express + TypeScript Server')
   }
 

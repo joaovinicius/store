@@ -3,5 +3,5 @@ export interface SqlClient<T>{
   update(table: string, item: T): Promise<boolean>,
   delete(table: string, item: T): Promise<boolean>,
   get(table: string, query: T): Promise<boolean>,
-  getById(table: string, id: string): Promise<boolean>,
+  getById(table: string, id?: number): Promise<boolean>,
 }

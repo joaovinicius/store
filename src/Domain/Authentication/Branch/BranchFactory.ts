@@ -1,7 +1,7 @@
 import { Branch } from './Branch'
 
 export function BranchFactory (
-  id = '',
+  id = undefined,
   name = '',
   address = undefined,
   admin = undefined,

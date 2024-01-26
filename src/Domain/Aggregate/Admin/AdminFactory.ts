@@ -3,7 +3,7 @@ import { Admin } from './Admin'
 const now = new Date()
 
 export function AdminFactory(
-  id = '',
+  id = undefined,
   user= UserFactory(),
   modulePermissions = [],
   createdAt = now,

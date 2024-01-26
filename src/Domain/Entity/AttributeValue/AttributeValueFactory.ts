@@ -3,7 +3,7 @@ import { AttributeValue } from './AttributeValue'
 const now = new Date()
 
 export function AttributeValueFactory(
-  id = '',
+  id = undefined,
   name = '',
   thumbnail = '',
   attribute = AttributeFactory(),

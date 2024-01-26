@@ -2,7 +2,7 @@ import { IUser } from '../../Aggregate/User/IUser'
 import { IComment } from './IComment'
 
 export class Comment implements IComment {
-  public id: string
+  public id?: number
   public name: string
   public from: IUser
   public message: string

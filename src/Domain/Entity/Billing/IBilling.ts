@@ -1,5 +1,5 @@
 export interface IBilling {
-  id: string,
+  id?: number,
   name: string,
   createdAt: Date,
   updatedAt: Date,

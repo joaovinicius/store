@@ -2,7 +2,7 @@ import { Address } from './Address'
 const now = new Date()
 
 export function AddressFactory(
-  id = '',
+  id = undefined,
   cep = '',
   neighborhood = '',
   street = '',

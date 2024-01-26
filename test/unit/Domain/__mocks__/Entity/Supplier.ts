@@ -5,7 +5,6 @@ import { Supplier } from '../../../../../src/Domain/Entity/Supplier/Supplier'
 const now = new Date()
 
 export const mock: ISupplier = new Supplier({
-  id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   contact: ContactMock,
   createdAt: now,

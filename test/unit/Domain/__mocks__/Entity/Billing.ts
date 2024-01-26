@@ -4,7 +4,6 @@ import { Billing } from '../../../../../src/Domain/Entity/Billing/Billing'
 const now = new Date()
 
 export const mock: IBilling = new Billing({
-  id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   createdAt: now,
   updatedAt: now

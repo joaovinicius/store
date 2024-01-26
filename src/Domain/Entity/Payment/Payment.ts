@@ -1,7 +1,7 @@
 import { IPayment } from './IPayment'
 
 export class Payment implements IPayment {
-  public id: string
+  public id?: number
   public name: string
   public createdAt: Date
   public updatedAt: Date

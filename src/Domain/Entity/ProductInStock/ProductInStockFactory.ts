@@ -4,7 +4,7 @@ import { ProductInStock } from './ProductInStock'
 const now = new Date()
 
 export function ProductInStockFactory(
-  id = '',
+  id = undefined,
   barcode = '',
   product = ProductFactory(),
   attributeValues = [],

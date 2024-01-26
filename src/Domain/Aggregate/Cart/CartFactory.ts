@@ -5,7 +5,7 @@ import { Cart } from './Cart'
 const now = new Date()
 
 export function CartFactory(
-  id = '',
+  id = undefined,
   products = [],
   coupon = CouponFactory(),
   shipping = ShippingFactory(),

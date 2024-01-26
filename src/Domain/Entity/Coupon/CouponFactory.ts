@@ -3,7 +3,7 @@ import { Coupon } from './Coupon'
 const now = new Date()
 
 export function CouponFactory(
-  id = '',
+  id = undefined,
   code = '',
   discount = 0,
   limit = 0,

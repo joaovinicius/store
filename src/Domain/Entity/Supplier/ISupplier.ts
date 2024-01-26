@@ -1,7 +1,7 @@
 import { IContact } from '../Contact/IContact'
 
 export interface ISupplier {
-  id: string,
+  id?: number,
   name: string,
   contact: IContact,
   createdAt: Date,

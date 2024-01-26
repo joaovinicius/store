@@ -1,7 +1,7 @@
 import { IState } from '../State'
 
 export interface ICity {
-  id: string
+  id?: number
   name: string
   state?: IState
   createdAt: Date

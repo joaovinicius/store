@@ -2,7 +2,7 @@ import { IAddress } from '../Address/IAddress'
 import { IContact } from './IContact'
 
 export class Contact implements IContact {
-  public id: string
+  public id?: number
   public email: string
   public phone: string
   public addresses: IAddress[]

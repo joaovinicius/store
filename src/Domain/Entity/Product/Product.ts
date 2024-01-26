@@ -1,7 +1,7 @@
 import { IProduct } from './IProduct'
 
 export class Product implements IProduct {
-  public id: string
+  public id?: number
   public name: string
   public description: string
   public brand: string

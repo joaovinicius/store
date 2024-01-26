@@ -2,7 +2,7 @@ import { Payment } from './Payment'
 const now = new Date()
 
 export function PaymentFactory(
-  id = '',
+  id = undefined,
   name = '',
   createdAt = now,
   updatedAt = now,

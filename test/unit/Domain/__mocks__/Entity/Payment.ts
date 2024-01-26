@@ -4,7 +4,6 @@ import { Payment } from '../../../../../src/Domain/Entity/Payment/Payment'
 const now = new Date()
 
 export const mock: IPayment = new Payment({
-  id: faker.datatype.uuid(),
   name: faker.name.firstName(),
   createdAt: now,
   updatedAt: now,

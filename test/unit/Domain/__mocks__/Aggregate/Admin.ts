@@ -7,7 +7,7 @@ import { mock as ModulePermissionMock } from '../Authentication/ModulePermission
 const now = new Date()
 
 export const mock: IAdmin = new Admin({
-  id: faker.datatype.uuid(),
+  
   user: UserMock,
   modulePermissions: [ModulePermissionMock],
   createdAt: now,

@@ -3,7 +3,7 @@ import { IContact } from '../../Entity/Contact/IContact'
 import { IUser } from './IUser'
 
 export class User implements IUser {
-  public id: string
+  public id?: number
   public name?: string
   public email: string
   public username?: string

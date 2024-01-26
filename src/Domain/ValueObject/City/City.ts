@@ -2,7 +2,7 @@ import { IState } from '../State'
 import { ICity } from './ICity'
 
 export class City implements ICity {
-  public id: string
+  public id?: number
   public name: string
   public state?: IState
   public createdAt: Date

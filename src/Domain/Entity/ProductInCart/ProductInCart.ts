@@ -2,7 +2,7 @@ import { IProductInStock } from '../ProductInStock'
 import { IProductInCart } from './IProductInCart'
 
 export class ProductInCart implements IProductInCart {
-  public id: string
+  public id?: number
   public quantity: number
   public product: IProductInStock
   public note: string

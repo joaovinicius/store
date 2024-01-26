@@ -2,7 +2,7 @@ import { ITenant } from '../../Authentication/Tenant'
 import { IContact } from '../../Entity/Contact/IContact'
 
 export interface IUser {
-  id: string,
+  id?: number,
   name?: string,
   email: string,
   username?: string,

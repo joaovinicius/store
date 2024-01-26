@@ -2,7 +2,7 @@ import { Attribute } from './Attribute'
 const now = new Date()
 
 export function AttributeFactory(
-  id = '',
+  id = undefined,
   name = '',
   createdAt= now,
   updatedAt= now,

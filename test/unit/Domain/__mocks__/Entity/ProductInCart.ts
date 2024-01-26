@@ -5,7 +5,6 @@ import { mock as ProductInStockMock } from './ProductInStock'
 const now = new Date()
 
 export const mock: IProductInCart = new ProductInCart({
-  id: faker.datatype.uuid(),
   quantity: faker.datatype.number(10),
   product: ProductInStockMock,
   note: faker.lorem.sentence(),

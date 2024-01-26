@@ -1,7 +1,7 @@
 import { State } from './State'
 
 export function StateFactory (
-  id = '',
+  id = undefined,
   name = '',
   abbr = '',
   createdAt = new Date(),

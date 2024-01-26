@@ -4,7 +4,7 @@ import { ICategory } from './ICategory'
 const now = new Date()
 
 export function CategoryFactory(
-  id = '',
+  id = undefined,
   name = '',
   createdAt = now,
   updatedAt = now,

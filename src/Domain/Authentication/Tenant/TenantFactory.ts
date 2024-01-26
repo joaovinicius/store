@@ -3,7 +3,7 @@ import { OrgFactory } from '../Org'
 import { Tenant } from './Tenant'
 
 export function TenantFactory (
-  id = '',
+  id = undefined,
   hostname = '',
   dbname = '',
   org = OrgFactory(),

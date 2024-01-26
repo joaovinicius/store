@@ -1,7 +1,7 @@
 import { ICategory } from './ICategory'
 
 export class Category implements ICategory {
-  public id: string
+  public id?: number
   public name: string
   public parent?: Category
   public children?: ICategory[]

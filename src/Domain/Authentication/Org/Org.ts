@@ -3,7 +3,7 @@ import { IAddress } from './../../Entity/Address/IAddress';
 import { IOrg } from './IOrg'
 
 export class Org implements IOrg {
- public id: string
+ public id?: number
  public name: string
  public address: IAddress
  public admin: IAdmin

@@ -1,7 +1,7 @@
 import { IShipping } from './IShipping'
 
 export class Shipping implements IShipping {
-  public id: string
+  public id?: number
   public name: string
   public createdAt: Date
   public updatedAt: Date
