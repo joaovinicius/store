@@ -34,7 +34,6 @@ function executeFirst() {
     commands[current].command()
     return
   }
-
   if (commands[current] && typeof commands[current].command === 'string') {
     const result = execute(commands[current].command)
 
@@ -130,6 +129,18 @@ const commands = {
         : flagOptions
       commandArgs = contextToRun
         .map(item => knexCommand('seed:make', contexts[item], paramName.join('')))
+
+      executeFirst()
+    }
+  },
+  'seed:run': {
+    description: 'Run seed flag option is required',
+    command: () => {
+      const contextToRun = (flags.length)
+        ? flags
+        : flagOptions
+      commandArgs = contextToRun
+        .map(item => knexCommand('seed:run', contexts[item], paramName.join('')))
 
       executeFirst()
     }
