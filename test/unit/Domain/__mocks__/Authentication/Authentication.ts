@@ -4,5 +4,6 @@ import { Authentication } from '../../../../../src/Domain/Authentication/Authent
 
 export const mock: IAuthentication = new Authentication({
   tenantId: faker.datatype.number(),
-  email: faker.internet.email()
+  email: faker.internet.email(),
+  password: faker.internet.password()
 })
