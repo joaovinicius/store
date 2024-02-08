@@ -41,7 +41,7 @@ export default function Validator(rules: IRule, value: any): void {
       verification[key] = check
     }
   }
-  console.log(verification, rules, value)
+  // console.log(verification, rules, value)
   if (Object.keys(verification).length) {
     throw verification
   }
