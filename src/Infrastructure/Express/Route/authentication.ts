@@ -20,7 +20,8 @@ const routes: IRoute[] = [
     path: `${PREFIX}/sign-up`,
     method: 'post',
     middeware: PublicMiddleware,
-    controller: authController.requestSignUp
+    controller: authController.requestSignUp,
+    dto: Authentication
   },
   {
     path: `${PREFIX}/sign-in-with-social`,
