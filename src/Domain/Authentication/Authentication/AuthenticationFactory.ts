@@ -11,5 +11,5 @@ export function AuthenticationFactory (
     email,
     password,
     passwordConfirmation
-  })
+  }, true)
 }
