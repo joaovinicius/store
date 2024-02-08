@@ -17,8 +17,10 @@ export default class AuthController {
 
   async requestSignIn(req: Request, res: Response): Promise<void> {
     try {
+      // const session = this.authenticationServerService.requestSignIn(res.locals.instance)
+      // res.json({ session });
       const { email, password, tenantId } = res.locals.instance;
-console.log(res.locals.instance)
+      
       const usuarioExistente = await db('user')
         .where('email', '=', email)
         .andWhere('tenant_id', '=', tenantId)

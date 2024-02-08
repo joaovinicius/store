@@ -1,6 +1,6 @@
 export interface IAuthentication {
   tenantId: number
   email: string
-  password?: string
+  password: string
   passwordConfirmation?: string
 }
