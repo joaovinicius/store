@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import ErrorHandler from '../Handlers/ResponseErrorHandler';
+import ErrorHandler from '../Handlers/ErrorHandler';
 
 export default function PublicMiddleware(
   req: Request,

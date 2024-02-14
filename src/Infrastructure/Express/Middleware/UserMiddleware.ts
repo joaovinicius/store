@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import ErrorHandler from '../Handlers/ResponseErrorHandler';
+import ErrorHandler from '../Handlers/ErrorHandler';
 
 const secret = process.env.SECRET_KEY??'secret'
 

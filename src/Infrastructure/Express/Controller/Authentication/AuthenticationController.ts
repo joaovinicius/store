@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import jwt from 'jsonwebtoken';
 import { db } from '../../../Knex/Authentication/knexfile'
 import bcrypt from 'bcrypt'
-import ErrorHandler from '../../Handlers/ResponseErrorHandler';
+import { ErrorHandler, ResponseErrorHandler, IErrorHandler } from '../../Handlers/ErrorHandler';
 
 const secret = process.env.SECRET_KEY ?? 'secret'
 
@@ -29,7 +29,7 @@ export default class AuthController {
       if (usuarioExistente) {
         await bcrypt.compare(password, usuarioExistente.password, (err, same) => {
           if (err || !same) {
-            ErrorHandler(res,400,'errors.passwords_do_not_match')
+            ErrorHandler(400,'errors.passwords_do_not_match')
             return
           }
           if (same) {
@@ -38,13 +38,12 @@ export default class AuthController {
           }
         })
       } else {
-
-        ErrorHandler(res,401,'errors.invalid_credentials')
+        ErrorHandler(401,'errors.invalid_credentials')
       }
 
-    } catch (error) {
+    } catch (error: IErrorHandler) {
 
-      ErrorHandler(res,422,'errors.invalid_data')
+      ResponseErrorHandler(res,error)
     }
   }
 
