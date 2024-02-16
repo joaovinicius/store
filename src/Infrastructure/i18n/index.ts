@@ -7,7 +7,6 @@ const base = {
     default: ptBr
 }
 
-
 export default function(message: string, lang: keyof typeof base = 'default'){
-    return get(base[lang],message)
+    return get(base[lang],message, 400)
 }
