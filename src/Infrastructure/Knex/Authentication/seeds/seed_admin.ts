@@ -8,7 +8,7 @@ export async function seed(knex: Knex): Promise<void> {
     await knex("admin").insert([
         { 
             id: "1", 
-            user_id: "2",
+            user_id: "1",
             modulePermissions: "true",
             tenant_id: "1"
         }
