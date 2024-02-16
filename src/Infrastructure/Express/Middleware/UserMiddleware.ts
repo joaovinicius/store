@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import ErrorHandler from '../Handlers/ErrorHandler';
+import {ResponseErrorHandler, ErrorHandler} from '../Handlers/ErrorHandler';
 
 const secret = process.env.SECRET_KEY??'secret'
 
@@ -17,9 +17,8 @@ export default function UserMiddleware(
       next()
       return
     }
-    
-    ErrorHandler(res,400,'errors.not_authorized')
-  } catch (error) {
-    ErrorHandler(res,401,'errors.not_authorized')
+    ErrorHandler('errors.not_authorized')
+  } catch (error:any) {
+    ResponseErrorHandler(res,error)
   }
 }

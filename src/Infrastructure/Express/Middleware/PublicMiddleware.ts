@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import ErrorHandler from '../Handlers/ErrorHandler';
+import {ResponseErrorHandler, ErrorHandler} from '../Handlers/ErrorHandler';
 
 export default function PublicMiddleware(
   req: Request,
@@ -8,10 +8,12 @@ export default function PublicMiddleware(
 ) {
   const token = req.headers['authorization']
 
-  if (token) {
-    ErrorHandler(res,401,'errors.user_already_logged_in')
-    return
-    
+  try {
+    if (token) {
+      ErrorHandler('errors.user_already_logged_in')
+    }
+    next()
+  } catch (error:any) {
+    ResponseErrorHandler(res,error)
   }
-  next()
 }
