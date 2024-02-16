@@ -31,7 +31,7 @@ export interface AuthenticationServerService{
     //   from: string,
     //   body: IVerificationPasswordToken
     // ): Promise<boolean>
-}
+}/
 
 export default class ServerService implements AuthenticationServerService{
     authenticationRepository: PostgresRepository
@@ -40,7 +40,7 @@ export default class ServerService implements AuthenticationServerService{
         this.authenticationRepository = new PostgresRepository(db)
     }
 
-    requestSignIn(payload:IAuthentication){
+    async requestSignIn(payload:IAuthentication){
         try {
             const usuarioExistente = this.authenticationRepository.checkIfUserExists(payload)
       
