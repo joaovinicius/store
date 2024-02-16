@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import jwt from 'jsonwebtoken';
 import { db } from '../../../Knex/Authentication/knexfile'
 import bcrypt from 'bcrypt'
-import { ErrorHandler, ResponseErrorHandler, IErrorHandler } from '../../Handlers/ErrorHandler';
+import { ErrorHandler, ResponseErrorHandler } from '../../Handlers/ErrorHandler';
 
 const secret = process.env.SECRET_KEY ?? 'secret'
 
@@ -29,8 +29,7 @@ export default class AuthController {
       if (usuarioExistente) {
         await bcrypt.compare(password, usuarioExistente.password, (err, same) => {
           if (err || !same) {
-            ErrorHandler(400,'errors.passwords_do_not_match')
-            return
+            ErrorHandler('errors.passwords_do_not_match')
           }
           if (same) {
             const token = jwt.sign({ id:usuarioExistente.id, email, tenantId}, secret, { expiresIn: '1d' });
@@ -38,10 +37,10 @@ export default class AuthController {
           }
         })
       } else {
-        ErrorHandler(401,'errors.invalid_credentials')
+        ErrorHandler('errors.invalid_credentials')
       }
 
-    } catch (error: IErrorHandler) {
+    } catch (error:any) {
 
       ResponseErrorHandler(res,error)
     }
@@ -53,20 +52,18 @@ export default class AuthController {
       const { email, password, passwordConfirmation, tenantId } = req.body;
 
       if (password !== passwordConfirmation) {
-        ErrorHandler(res,400,'errors.passwords_do_not_match')
-        return
+        ErrorHandler('errors.passwords_do_not_match')
       }
       const usuarioExistente = await db('user')
         .where('email', '=', email)
         .andWhere('tenant_id', '=', tenantId)
         .first()
       if (usuarioExistente) {
-        ErrorHandler(res,400,'errors.this_email_is_already_in_use')
+        ErrorHandler('errors.this_email_is_already_in_use')
       } else {
         await bcrypt.hash(password, 10, async  (err, hash) => {
           if (err) {
-            ErrorHandler(res,400,'errors.passwords_do_not_match')
-            return
+            ErrorHandler('errors.passwords_do_not_match')
           }
           await db('user')
             .returning('id')
@@ -83,11 +80,10 @@ export default class AuthController {
         });
       }
 
-    } catch (error) {
-      // TODO: USE ERROR HANDLER HERE
-      res.status(422).json({ mensagem: JSON.stringify(error) });
+    } catch (e:any) {
+      ResponseErrorHandler(res,e)
     }
-  }
+  } 
 
   async requestSignInWithSocial(req: Request, res: Response): Promise<void> {
 
