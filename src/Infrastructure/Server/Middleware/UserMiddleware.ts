@@ -1,0 +1,10 @@
+import { type Request, type Response, type NextFunction } from 'express'
+
+export default function UserMiddleware (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  console.log('Request Type:', req.method)
+  next()
+}

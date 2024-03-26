@@ -1,4 +1,4 @@
-import fs, { Dirent } from 'fs'
+import fs, { type Dirent } from 'fs'
 import { getInterfaceMethodsFromPath } from '../../../src/Support/Helper/TsMorph'
 
 const contexts = ['Authentication']

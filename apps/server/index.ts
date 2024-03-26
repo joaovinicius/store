@@ -1,4 +1,4 @@
-import Boot from '../../src/Infrastructure/Express/boot'
+import Boot from '../../src/Infrastructure/Server/boot.js'
 
 new Boot()
   .setConfig()
